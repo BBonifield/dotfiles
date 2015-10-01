@@ -1,3 +1,5 @@
+DOTS=$HOME/.dotfiles
+
 #
 # oh-my-zsh setup
 #
@@ -64,11 +66,15 @@ eval "$(rbenv init -)"
 # Aliases
 #
 
+# shortcuts
 alias grepr='grep -R'
 alias r='rails'
 alias g='git'
 alias h='heroku'
 alias gs='git status'
+
+# edit dotfiles
+alias dotfiles="$EDITOR $DOTS"
 
 #
 # Key bindings
