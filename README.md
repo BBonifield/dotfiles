@@ -7,7 +7,7 @@ he did and modified it for my purposes.
 ## Pre-reqs
 
 - Xcode from the App Store (necessary for MacVim)
-- [ohmyzsh](https://github.com/robbyrussell/oh-my-zsh)
+- [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 - [janus](https://github.com/carlhuda/janus)
 
 ## Installation
