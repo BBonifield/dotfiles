@@ -1,12 +1,85 @@
-" Set syntax highlighting options and colors
+"
+" General settings
+"
+
+" Set colors and fonts
 set t_Co=256
 set background=dark
 colorscheme molokai
-" set guifont=DejaVu\ Sans\ Mono:h16
-set guifont=Hack:h16
+set guifont=Hack:h16 " Maybe switch back to DejaVu Sans Mono someday
 
-" Use zsh as the shell
-" set shell=zsh\ -i
+" Don't show the intro message when starting vim.
+set shortmess=I
+
+" Turn off wordwrap
+set nowrap
+
+" Make global search default
+set gdefault
+
+" Turn off error bells
+set noerrorbells visualbell t_vb=
+
+" Customize status line
+set statusline=%f\ %m%=Line\:%l/%L\ \@\ Col\:%v
+
+" Code Style
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set textwidth=80
+
+" Visual column for max line length indicator
+set colorcolumn=110
+
+" Globally ignore unhelpful folders/files
+set wildignore+=*/vendor/bundle/*
+set wildignore+=*/node_modules/*
+set wildignore+=*/tags
+
+"
+" Plugin customizations
+"
+
+" NERDCommenter Customizations
+let NERDSpaceDelims = 1
+
+" Don't refresh NERDTree on focus gained for speed gains
+autocmd! AuNERDTreeCmd FocusGained
+
+" CtrlP Customizations
+let g:ctrlp_working_path_mode = 0 " start in the current working instead of traversing up
+if executable('ag')
+  " use silver surfer instead of ack for speed
+  let g:ackprg = 'ag --nogroup --nocolor --column'
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_use_caching = 0
+endif
+
+" Link syntastic to rbenv ruby
+let g:syntastic_ruby_exec = '/usr/local/var/rbenv/shims/ruby'
+
+" Dispatch test runs into a shell
+let g:vroom_use_dispatch = 1
+let g:vroom_spec_command = 'spring rspec ' " using spring
+let g:vroom_clear_screen = 0
+
+"
+" Helpers/aliases customizations
+"
+
+" CtrlP aliasing
+map <C-t> :CtrlP<CR>
+map <D-t> :CtrlP<CR>
+
+" Easy insert mode exit
+inoremap jj <Esc>
+
+" Select last pasted block
+nnoremap gp `[v`]
+
+" Focus opened file in nerdtree
+nmap ,nf :NERDTreeFind<CR>
 
 " Faster file movement
 map <C-j> 5j
@@ -22,78 +95,16 @@ inoremap <A-k> <Esc>:m-2<CR>==gi
 vnoremap <A-j> :m'>+<CR>gv=gv
 vnoremap <A-k> :m-2<CR>gv=gv
 
-set shortmess=I " Don't show the intro message when starting vim.
-
-" Easy insert mode exit
-inoremap jj <Esc>
-
-" Select last pasted block
-nnoremap gp `[v`]
-
-" Focus opened file in nerdtree
-nmap ,nf :NERDTreeFind<CR>
-
-" NERDCommenter Customizations
-let NERDSpaceDelims = 1
-
-" CtrlP aliasing and Customizations
-map <C-t> :CtrlP<CR>
-map <D-t> :CtrlP<CR>
-let g:ctrlp_working_path_mode = 0 " start in the current working instead of traversing up
-set wildignore+=*/vendor/bundle/*
-set wildignore+=*/node_modules/*
-set wildignore+=*/dist/*
-
-" Turn off wordwrap
-set nowrap
-
-" Make global search default
-set gdefault
-
-" Turn off error bells
-set noerrorbells visualbell t_vb=
-
-" Customize status line
-set statusline=%f\ %m%=Line\:%l/%L\ \@\ Col\:%v
-
 " Copy current filename to system clipboard
 nnoremap <Leader>cf :let @*=expand("%:t")<cr>:echo "Copied file name to clipboard"<cr>
 " Copy current buffer path relative to root of VIM session to system clipboard
 nnoremap <Leader>cp :let @*=expand("%")<cr>:echo "Copied file path to clipboard"<cr>
 
-" Code Style
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-" set textwidth=80
-
-" Visual column for max line length indicator
-set colorcolumn=110
-
-" Tag helper
-map <F8> :!ctags -R .<CR>
-
-" Silver surfer! because it's fast
-if executable('ag')
-  let g:ackprg = 'ag --nogroup --nocolor --column'
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  " let g:ctrlp_user_command = 'ag %s -l --nocolor --ignore vendor/bundle -g ""'
-  let g:ctrlp_use_caching = 0
-endif
-
-" Link syntastic to rbenv ruby
-let g:syntastic_ruby_exec = '/usr/local/var/rbenv/shims/ruby'
-
-" Dispatch test runs into a shell
-let g:vroom_use_dispatch = 1
-" Use spring
-let g:vroom_spec_command = 'spring rspec '
-let g:vroom_clear_screen = 0
-
-" Don't refresh nerdtree on focus gained
-autocmd! AuNERDTreeCmd FocusGained
-
 " render markdown preview
 map <silent> <Leader>md :w !ruby -e 'require "rubygems"; require "kramdown"; require "erb"; body = Kramdown::Document.new(STDIN.read.chomp, input: "GFM", hard_wrap: false).to_html; print ERB.new(File.read(Dir.home + "/.vim-support/kramdown.html.erb")).result(binding)' > /tmp/mdresult.html; open /tmp/mdresult.html<CR>
 
+" `:R {command}` to open the output of a command in a scratch buffer (e.g. `:R ls`)
 command! -nargs=* -complete=shellcmd R new | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args>
+
+" ctags generation helper
+map <F8> :!ctags -R .<CR>
