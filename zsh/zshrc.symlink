@@ -74,7 +74,7 @@ alias h='heroku'
 alias gs='git status'
 
 # edit dotfiles
-alias dotfiles="$EDITOR $DOTS"
+alias dotfiles="cd $DOTS; $EDITOR ."
 
 #
 # Key bindings
