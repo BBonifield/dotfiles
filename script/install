@@ -3,7 +3,9 @@
 # bootstrap installs things.
 
 cd "$(dirname "$0")/.."
-DOTS=$(pwd)
+
+# export so that sub-commands know about the root
+export DOTS=$(pwd)
 
 set -e
 
@@ -121,8 +123,23 @@ install_dotfiles () {
   done
 }
 
+install_homebrew () {
+  $DOTS/homebrew/install.sh 2>&1
+}
+
+init_submodules () {
+  $DOTS/git/setup-submodules.sh 2>&1
+}
+
+upgrade_dotfiles () {
+  $DOTS/bin/upgrade-dotfiles 2>&1
+}
+
 setup_gitconfig
 install_dotfiles
+install_homebrew
+init_submodules
+upgrade_dotfiles
 
 echo ''
 echo '  All installed!'

@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# upgrade-dotfiles
+#
+# `upgrade-dotfiles` handles installation, updates, things like that. Run it
+# periodically to make sure you're on the latest and greatest.
+
+# export so that sub-commands know about the root
+export DOTS="$(dirname "$0")/.."
+
+. $DOTS/functions/output.sh
+
+# Set OS X defaults
+
+info "setting OSX defaults"
+$DOTS/osx/set-defaults.sh
+
+info "upgrading Janus"
+$DOTS/vim/upgrade-janus.sh
+
+if test $(which brew)
+then
+  info "updating Homebrew"
+  brew update
+fi
+
+$DOTS/homebrew/install-dependencies.sh 2>&1
+
+success "update complete"

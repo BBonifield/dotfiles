@@ -1,14 +1,10 @@
-#!/bin/sh
-#
-# Homebrew
-#
-# This installs some of the common dependencies needed (or at least desired)
-# using Homebrew.
+#!/usr/bin/env bash
 
-# Check for Homebrew
+. $DOTS/functions/output.sh
+
 if test ! $(which brew)
 then
-  echo "  Installing Homebrew for you."
+  info "installing Homebrew"
 
   # Install the correct homebrew for each OS type
   if test "$(uname)" = "Darwin"
@@ -18,10 +14,4 @@ then
   then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/linuxbrew/go/install)"
   fi
-
 fi
-
-# Install homebrew dependencies
-brew install hub ag ruby-build rbenv git ctags macvim
-
-exit 0
