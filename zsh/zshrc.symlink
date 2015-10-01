@@ -71,7 +71,6 @@ alias h='heroku'
 alias b='bundle exec'
 alias be='bundle exec'
 alias gs='git status'
-alias simpler='cd ~/projects/simpler-web'
 
 #
 # Key bindings
