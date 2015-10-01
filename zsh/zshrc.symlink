@@ -65,11 +65,9 @@ eval "$(rbenv init -)"
 #
 
 alias grepr='grep -R'
-alias r='bundle exec rails'
+alias r='rails'
 alias g='git'
 alias h='heroku'
-alias b='bundle exec'
-alias be='bundle exec'
 alias gs='git status'
 
 #
