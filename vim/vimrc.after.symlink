@@ -71,7 +71,7 @@ set softtabstop=2
 set colorcolumn=110
 
 " Tag helper
-map <F8> :!/usr/local/Cellar/ctags/5.8/bin/ctags -R .<CR>
+map <F8> :!ctags -R .<CR>
 
 " Silver surfer! because it's fast
 if executable('ag')
