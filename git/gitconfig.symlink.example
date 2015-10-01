@@ -1,0 +1,35 @@
+[user]
+  name = AUTHORNAME
+  email = AUTHOREMAIL
+[alias]
+  a = add
+  s = status
+  c = commit
+  br = branch
+  co = checkout
+  cp = cherry-pick
+  df = diff
+  lg = log -p
+  aa = add .
+  goodrebase = !git aa && git rebase --continue
+[credential]
+  helper = GIT_CREDENTIAL_HELPER
+[core]
+  excludesfile = ~/.gitignore
+  editor = /usr/bin/vim
+[color]
+  ui = true
+[push]
+	default = simple
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true

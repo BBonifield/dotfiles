@@ -1,0 +1,12 @@
+[submodule "vim/janus.symlink/nerdtree-ack"]
+	path = vim/janus.symlink/nerdtree-ack
+	url = https://github.com/tyok/nerdtree-ack.git
+[submodule "vim/janus.symlink/nerdtree-git-plugin"]
+	path = vim/janus.symlink/nerdtree-git-plugin
+	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
+[submodule "vim/janus.symlink/vim-jsx"]
+	path = vim/janus.symlink/vim-jsx
+	url = https://github.com/mxw/vim-jsx.git
+[submodule "vim/janus.symlink/vim-dispatch"]
+	path = vim/janus.symlink/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch.git

@@ -1,0 +1,51 @@
+#!/bin/bash
+
+if [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
+  cat <<-USAGE
+  USAGE:
+    git deployable-prs -r <heroku-remote-name> [--open]
+
+  Required Arguments:
+    -r         Specify the name of the git remote for the Heroku app in question
+
+  Options:
+    --open     Open the URLs for the pull requests in your default browser
+
+USAGE
+  exit 1
+fi
+
+if [ "$1" != "-r" ] || [ "$2" == "" ]; then
+  echo "Must specify -r [remote] as a first argument"
+  exit 1
+fi
+
+__show_prs_get_releases() {
+  heroku releases --remote "$1"
+}
+
+__show_prs_get_latest_deploy_sha() {
+  __show_prs_get_releases $1 | grep '^v\d*\s*Deploy\|^v\d*\s*Promote' | tail -r | tail -n 1 | grep --extended-regexp -o --color=never '[a-f0-9]{5,}' | tr -d '\n'
+}
+
+__show_prs_get_pull_request_commit_messages() {
+  git log "$(__show_prs_get_latest_deploy_sha $1)"..head | grep 'Merge pull request'
+}
+
+PRs="$(__show_prs_get_pull_request_commit_messages $2)"
+
+if [ "$(echo $PRs | tr -d '\n')" == "" ]; then
+  echo "Up-to-date."
+  exit 0
+fi
+
+if [ "$3" == "--open" ]; then
+  REPO_NAME=$(git config --get remote.origin.url | sed -E 's/.*:(.*).git/\1/g')
+  NUMBERS="$(echo $PRs | grep -E -o '#\d+' | grep -o -E '\d+' | sort)"
+  for number in $(echo "$NUMBERS"); do
+    open "https://github.com/$REPO_NAME/pull/$number"
+    sleep 0.5
+  done
+else
+  echo "$PRs"
+fi

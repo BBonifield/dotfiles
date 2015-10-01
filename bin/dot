@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# dot
+#
+# `dot` handles installation, updates, things like that. Run it periodically
+# to make sure you're on the latest and greatest.
+export DOTS=$HOME/.dotfiles
+
+. $DOTS/functions/output.sh
+
+# Set OS X defaults
+
+info "Setting OSX defaults\n"
+$DOTS/osx/set-defaults.sh
+
+info "Upgrading Janus\n"
+upgrade-janus
+
+info "Upgrading oh-my-zsh\n"
+upgrade_oh_my_zsh
+
+info "Updating Homebrew\n"
+brew update
+
+info "Installing Homebrew dependencies\n"
+# Install homebrew packages
+$DOTS/homebrew/install.sh 2>&1
+success "Done"

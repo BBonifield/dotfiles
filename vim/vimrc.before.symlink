@@ -1,0 +1,4 @@
+call janus#disable_plugin('vim-snippets')
+
+" Change leader to something helpful
+let mapleader=","
