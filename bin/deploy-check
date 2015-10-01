@@ -3,7 +3,7 @@
 if [ "$1" == "--help" ] || [ "$1" == "-h" ]; then
   cat <<-USAGE
   USAGE:
-    git deployable-prs -r <heroku-remote-name> [--open]
+    deploy-check -r <heroku-remote-name> [--open]
 
   Required Arguments:
     -r         Specify the name of the git remote for the Heroku app in question
