@@ -27,7 +27,6 @@ set statusline=%f\ %m%=Line\:%l/%L\ \@\ Col\:%v
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-set textwidth=80
 
 " Visual column for max line length indicator
 set colorcolumn=110
