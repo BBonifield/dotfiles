@@ -4,6 +4,9 @@ DOTS=$HOME/.dotfiles
 # oh-my-zsh setup
 #
 
+# Ensure that fpath has access to correct hub autocompletions
+fpath=('/usr/local/share/zsh/site-functions' $fpath)
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
