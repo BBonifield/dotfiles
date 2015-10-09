@@ -100,7 +100,7 @@ nnoremap <Leader>cf :let @*=expand("%:t")<cr>:echo "Copied file name to clipboar
 nnoremap <Leader>cp :let @*=expand("%")<cr>:echo "Copied file path to clipboard"<cr>
 
 " render markdown preview
-map <silent> <Leader>md :w !ruby -e 'require "rubygems"; require "kramdown"; require "erb"; body = Kramdown::Document.new(STDIN.read.chomp, input: "GFM", hard_wrap: false).to_html; print ERB.new(File.read(Dir.home + "/.vim-support/kramdown.html.erb")).result(binding)' > /tmp/mdresult.html; open /tmp/mdresult.html<CR>
+map <silent> <Leader>md :silent w !ruby -e 'require "rubygems"; require "kramdown"; require "erb"; body = Kramdown::Document.new(STDIN.read.chomp, input: "GFM", hard_wrap: false).to_html; print ERB.new(File.read(Dir.home + "/.vim-support/kramdown.html.erb")).result(binding)' > /tmp/mdresult.html; open /tmp/mdresult.html<CR>
 
 " `:R {command}` to open the output of a command in a scratch buffer (e.g. `:R ls`)
 command! -nargs=* -complete=shellcmd R new | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args>
