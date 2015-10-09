@@ -110,3 +110,6 @@ map <F8> :!ctags -R .<CR>
 
 " Force saving files that require root permission 
 cnoremap w!! w !sudo tee > /dev/null %
+
+" Open the GitHub Desktop app
+map <silent> <Leader>gh :silent !github<CR>
