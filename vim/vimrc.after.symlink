@@ -81,10 +81,14 @@ nnoremap gp `[v`]
 nmap ,nf :NERDTreeFind<CR>
 
 " Faster file movement
-map <C-j> 5j
-map <C-k> 5k
 map <Space> 20j
 map <BS> 20k
+
+" Faster pane movement
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " Move lines up/down
 nnoremap <A-j> :m+<CR>==
