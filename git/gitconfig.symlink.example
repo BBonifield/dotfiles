@@ -12,6 +12,7 @@
   lg = log -p
   aa = add .
   goodrebase = !git aa && git rebase --continue
+  deadbranches = "!git branch --merged | grep -v \\* | grep -v master | grep -v dev | xargs -n 1 git branch -d"
 [credential]
   helper = GIT_CREDENTIAL_HELPER
 [core]
