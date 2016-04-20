@@ -3,3 +3,4 @@
 .agignore
 vendor/bundle
 tags
+.ctagignore
