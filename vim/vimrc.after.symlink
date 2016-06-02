@@ -29,7 +29,7 @@ set shiftwidth=2
 set softtabstop=2
 
 " Visual column for max line length indicator
-set colorcolumn=110
+set colorcolumn=120
 
 " Globally ignore unhelpful folders/files
 set wildignore+=*/vendor/bundle/*
