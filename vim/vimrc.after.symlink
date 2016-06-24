@@ -63,6 +63,11 @@ let g:vroom_use_dispatch = 1
 let g:vroom_spec_command = 'spring rspec ' " using spring
 let g:vroom_clear_screen = 0
 
+" Turn off vim-ruby balloonexpr
+if has("gui_running")
+  setlocal balloonexpr=
+endif
+
 "
 " Helpers/aliases customizations
 "
