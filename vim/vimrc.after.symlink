@@ -125,3 +125,19 @@ cnoremap w!! w !sudo tee > /dev/null %
 
 " Open the GitHub Desktop app
 map <silent> <Leader>gh :silent !github<CR>
+
+" Add copy file path to NERDTree
+call NERDTreeAddKeyMap({
+  \ 'key': 'yy',
+  \ 'callback': 'NERDTreeYankCurrentNode',
+  \ 'quickhelpText': 'put full path of current node into the default register' })
+
+function! NERDTreeYankCurrentNode()
+  let n = g:NERDTreeFileNode.GetSelected()
+  if n != {}
+    " let @*=n.path.str()
+    let @*=fnamemodify(n.path.str(), ':.')
+    echo "Copied file path to clipboard"
+      " call setreg('"', n.path.str())
+  endif
+endfunction
