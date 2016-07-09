@@ -126,18 +126,30 @@ cnoremap w!! w !sudo tee > /dev/null %
 " Open the GitHub Desktop app
 map <silent> <Leader>gh :silent !github<CR>
 
-" Add copy file path to NERDTree
+" Copy current node filename to system clipboard
 call NERDTreeAddKeyMap({
-  \ 'key': 'yy',
-  \ 'callback': 'NERDTreeYankCurrentNode',
-  \ 'quickhelpText': 'put full path of current node into the default register' })
+  \ 'key': ',cf',
+  \ 'callback': 'NERDTreeCopyNodePath',
+  \ 'quickhelpText': 'put full path of current node into the system clipboard' })
 
-function! NERDTreeYankCurrentNode()
+function! NERDTreeCopyNodePath()
   let n = g:NERDTreeFileNode.GetSelected()
   if n != {}
-    " let @*=n.path.str()
+    let @*=n.path.str()
+    echo "Copied file name to clipboard"
+  endif
+endfunction
+
+" Copy current node path relative to root of VIM session to system clipboard
+call NERDTreeAddKeyMap({
+  \ 'key': ',cp',
+  \ 'callback': 'NERDTreeCopyRelativeNodePath',
+  \ 'quickhelpText': 'put full path of current node into the system clipboard' })
+
+function! NERDTreeCopyRelativeNodePath()
+  let n = g:NERDTreeFileNode.GetSelected()
+  if n != {}
     let @*=fnamemodify(n.path.str(), ':.')
     echo "Copied file path to clipboard"
-      " call setreg('"', n.path.str())
   endif
 endfunction
