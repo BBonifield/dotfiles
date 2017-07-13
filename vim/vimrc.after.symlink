@@ -54,7 +54,10 @@ let g:ctrlp_working_path_mode = 0 " start in the current working instead of trav
 if executable('ag')
   " use silver surfer instead of ack for speed
   let g:ackprg = 'ag --nogroup --nocolor --column'
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g "" --depth 4'
+
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_max_files = 15000
+  let g:ctrlp_max_height = 20
   let g:ctrlp_use_caching = 0
 endif
 
