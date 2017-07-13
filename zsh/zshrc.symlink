@@ -78,6 +78,7 @@ alias r='rails'
 alias g='git'
 alias h='heroku'
 alias gs='git status'
+alias mocha='npm run mocha'
 
 # edit dotfiles
 alias dotfiles="cd $DOTS; $EDITOR ."
