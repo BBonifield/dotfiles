@@ -113,6 +113,9 @@ nnoremap <Leader>cp :let @*=expand("%")<cr>:echo "Copied file path to clipboard"
 " Run rubocop on the current file
 nnoremap <Leader>rc :RuboCop<CR>
 
+" Turn off focusing
+nnoremap <Leader>ff :%s/, \(focus: true\\|:focus\)//<cr>:noh<cr>
+
 " render markdown preview
 map <silent> <Leader>md :silent w !ruby -e 'require "rubygems"; require "kramdown"; require "erb"; body = Kramdown::Document.new(STDIN.read.chomp, input: "GFM", hard_wrap: false).to_html; print ERB.new(File.read(Dir.home + "/.vim-support/kramdown.html.erb")).result(binding)' > /tmp/mdresult.html; open /tmp/mdresult.html<CR>
 
