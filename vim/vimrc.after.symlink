@@ -123,7 +123,7 @@ map <silent> <Leader>md :silent w !ruby -e 'require "rubygems"; require "kramdow
 command! -nargs=* -complete=shellcmd R new | setlocal buftype=nofile bufhidden=hide noswapfile | r !<args>
 
 " ctags generation helper
-map <F8> :!if [ -f .ctagignore ] ; then CTAGIGNORE="--exclude=@.ctagignore" ; fi; ctags -R --exclude=.git --exclude=node_modules $CTAGIGNORE .<CR>
+nnoremap <Leader>tg :!if [ -f .ctagignore ] ; then CTAGIGNORE="--exclude=@.ctagignore" ; fi; ctags -R --exclude=.git --exclude=node_modules node_cache jspm_packages $CTAGIGNORE .<CR>
 
 " Force saving files that require root permission 
 cnoremap w!! w !sudo tee > /dev/null %
