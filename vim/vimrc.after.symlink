@@ -113,9 +113,6 @@ nnoremap <Leader>cf :let @*=expand("%:t")<cr>:echo "Copied file name to clipboar
 " Copy current buffer path relative to root of VIM session to system clipboard
 nnoremap <Leader>cp :let @*=expand("%")<cr>:echo "Copied file path to clipboard"<cr>
 
-" Run rubocop on the current file
-nnoremap <Leader>rc :RuboCop<CR>
-
 " Turn off focusing
 nnoremap <Leader>ff :%s/, \(focus: true\\|:focus\)//<cr>:noh<cr>
 
@@ -161,3 +158,10 @@ function! NERDTreeCopyRelativeNodePath()
     echo "Copied file path to clipboard"
   endif
 endfunction
+
+" Configure syntastic to use checkers
+let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_ruby_checkers=['rubocop']
+
+" Run syntastic on the current file
+nnoremap <Leader>rc :SyntasticCheck<CR>
