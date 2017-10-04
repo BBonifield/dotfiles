@@ -79,6 +79,7 @@ alias g='git'
 alias h='heroku'
 alias gs='git status'
 alias mocha='npm run mocha'
+alias eslint='npm run eslint'
 
 # edit dotfiles
 alias dotfiles="cd $DOTS; $EDITOR ."
