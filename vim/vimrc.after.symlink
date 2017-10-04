@@ -165,3 +165,7 @@ let g:syntastic_ruby_checkers=['rubocop']
 
 " Run syntastic on the current file
 nnoremap <Leader>rc :SyntasticCheck<CR>
+
+" Remap Ctrl-w + Ctrl-o to default zoomwin command since ctrl-w + o will trigger
+" vim's :only
+nnoremap <silent> <C-w><C-o> :ZoomWin<CR>
