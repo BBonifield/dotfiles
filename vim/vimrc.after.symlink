@@ -169,3 +169,7 @@ nnoremap <Leader>rc :SyntasticCheck<CR>
 " Remap Ctrl-w + Ctrl-o to default zoomwin command since ctrl-w + o will trigger
 " vim's :only
 nnoremap <silent> <C-w><C-o> :ZoomWin<CR>
+
+" find selected text more easily
+nmap <Leader>fw :Ack! "\b<cword>\b"<CR>
+vmap <Leader>fw y:Ack! "\b<C-r>"\b"<CR>
