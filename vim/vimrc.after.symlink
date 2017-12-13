@@ -78,8 +78,9 @@ endif
 "
 
 " CtrlP aliasing
-map <C-t> :CtrlP<CR>
-map <D-t> :CtrlP<CR>
+" - disabled as i try out fzf
+" map <C-t> :CtrlP<CR>
+" map <D-t> :CtrlP<CR>
 
 " Easy insert mode exit
 inoremap jj <Esc>
@@ -173,3 +174,16 @@ nnoremap <silent> <C-w><C-o> :ZoomWin<CR>
 " find selected text more easily
 nmap <Leader>fw :Ack! "\b<cword>\b"<CR>
 vmap <Leader>fw y:Ack! "\b<C-r>"\b"<CR>
+
+" fzf customizations
+map <C-p> :Files<CR>
+map <C-t> :Files<CR>
+map <D-t> :Files<CR>
+map <C-b> :Buffers<CR>
+map <Leader>b :Buffers<CR>
+let g:fzf_action = {
+  \ 'ctrl-h': 'split',
+  \ 'ctrl-v': 'vsplit' }
+map <Leader>fb :Buffers<CR>
+map <Leader>fu :FZFMru<CR>
+map <Leader>ff :Files<CR>
