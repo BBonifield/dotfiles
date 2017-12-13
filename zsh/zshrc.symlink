@@ -96,6 +96,8 @@ alias load_nvm='export NVM_INSTALL_DIR=$(brew --prefix nvm) && [ -s "$NVM_INSTAL
 alias node='unalias node npm && load_nvm && node'
 alias npm='unalias node npm && load_nvm && npm'
 
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # fzf + ag configuration
