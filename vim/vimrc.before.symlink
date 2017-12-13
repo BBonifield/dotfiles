@@ -2,3 +2,18 @@ call janus#disable_plugin('vim-snippets')
 
 " Change leader to something helpful
 let mapleader=","
+
+" customize status line
+let g:lightline = {
+      \   'colorscheme': 'one',
+      \   'active': {
+      \     'right': [ ['lineinfo'], [], ['filetype'] ]
+      \   },
+      \   'component_function': {
+      \     'filename': 'LightlineFilename',
+      \   }
+      \ }
+
+function! LightlineFilename()
+  return fnamemodify(expand("%"), ":~:.")
+endfunction
