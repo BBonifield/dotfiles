@@ -90,3 +90,8 @@ alias dotfiles="cd $DOTS; $EDITOR ."
 
 bindkey '[C' forward-word
 bindkey '[D' backward-word
+
+export NVM_DIR=~/.nvm
+alias load_nvm='export NVM_INSTALL_DIR=$(brew --prefix nvm) && [ -s "$NVM_INSTALL_DIR/nvm.sh" ] && . "$NVM_INSTALL_DIR/nvm.sh"'
+alias node='unalias node npm && load_nvm && node'
+alias npm='unalias node npm && load_nvm && npm'
