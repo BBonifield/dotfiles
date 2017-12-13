@@ -9,7 +9,7 @@ he did and modified it for my purposes.
 - Xcode from the App Store (necessary for MacVim)
 - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 - [janus](https://github.com/carlhuda/janus)
-- [GitHub Desktop](https://desktop.github.com/), accessible from vim with alias `<leader>md`
+- [GitHub Desktop](https://desktop.github.com/), accessible from vim with alias `<leader>gh`
 
 ## Installation
 
