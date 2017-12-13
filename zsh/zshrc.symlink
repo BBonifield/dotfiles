@@ -81,6 +81,12 @@ alias gs='git status'
 alias mocha='npm run mocha'
 alias eslint='npm run eslint'
 
+# gloo specific aliases
+alias xssh='~/projects/ansible-polymer/xssh'
+alias polymer='cd ~/projects/polymer/polymer'
+alias scotch='cd ~/projects/polymer/scotch'
+alias supergloo='cd ~/projects/polymer/supergloo'
+
 # edit dotfiles
 alias dotfiles="cd $DOTS; $EDITOR ."
 
