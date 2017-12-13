@@ -189,3 +189,6 @@ let g:fzf_action = {
 map <Leader>fb :Buffers<CR>
 map <Leader>fu :FZFMru<CR>
 map <Leader>ff :Files<CR>
+
+" easily toggle the quickfix window
+nmap <Leader><Leader> <Plug>window:quickfix:toggle
