@@ -16,3 +16,27 @@
 [submodule "vim/janus.symlink/vim-graphql"]
 	path = vim/janus.symlink/vim-graphql
 	url = https://github.com/jparise/vim-graphql.git
+[submodule "vim/janus.symlink/QFGrep"]
+	path = vim/janus.symlink/QFGrep
+	url = https://github.com/sk1418/QFGrep.git
+[submodule "vim/janus.symlink/far.vim"]
+	path = vim/janus.symlink/far.vim
+	url = https://github.com/brooth/far.vim.git
+[submodule "vim/janus.symlink/fzf-mru.vim"]
+	path = vim/janus.symlink/fzf-mru.vim
+	url = https://github.com/pbogut/fzf-mru.vim.git
+[submodule "vim/janus.symlink/fzf.vim"]
+	path = vim/janus.symlink/fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git
+[submodule "vim/janus.symlink/lightline.vim"]
+	path = vim/janus.symlink/lightline.vim
+	url = https://github.com/itchyny/lightline.vim.git
+[submodule "vim/janus.symlink/onedark.vim"]
+	path = vim/janus.symlink/onedark.vim
+	url = https://github.com/joshdick/onedark.vim.git
+[submodule "vim/janus.symlink/vim-toggle-quickfix"]
+	path = vim/janus.symlink/vim-toggle-quickfix
+	url = git://github.com/drmingdrmer/vim-toggle-quickfix.git
+[submodule "vim/janus.symlink/vim-windowswap"]
+	path = vim/janus.symlink/vim-windowswap
+	url = https://github.com/wesQ3/vim-windowswap.git
