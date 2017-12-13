@@ -40,3 +40,9 @@
 [submodule "vim/janus.symlink/vim-windowswap"]
 	path = vim/janus.symlink/vim-windowswap
 	url = https://github.com/wesQ3/vim-windowswap.git
+[submodule "vim/janus.symlink/vim-rhubarb"]
+	path = vim/janus.symlink/vim-rhubarb
+	url = https://github.com/tpope/vim-rhubarb.git
+[submodule "vim/janus.symlink/splitjoin.vim"]
+	path = vim/janus.symlink/splitjoin.vim
+	url = https://github.com/AndrewRadev/splitjoin.vim.git
