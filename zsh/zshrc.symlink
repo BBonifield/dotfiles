@@ -95,3 +95,17 @@ export NVM_DIR=~/.nvm
 alias load_nvm='export NVM_INSTALL_DIR=$(brew --prefix nvm) && [ -s "$NVM_INSTALL_DIR/nvm.sh" ] && . "$NVM_INSTALL_DIR/nvm.sh"'
 alias node='unalias node npm && load_nvm && node'
 alias npm='unalias node npm && load_nvm && npm'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# fzf + ag configuration
+if type fzf &> /dev/null && type ag &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='ag --nocolor --follow -g ""'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
+  # custom solarized dark color scheme
+  export FZF_DEFAULT_OPTS='
+    --color fg:-1,bg:-1,hl:33,fg+:254,bg+:235,hl+:33
+    --color info:136,prompt:136,pointer:230,marker:230,spinner:136
+  '
+fi
