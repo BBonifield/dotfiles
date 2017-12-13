@@ -192,3 +192,6 @@ map <Leader>ff :Files<CR>
 
 " easily toggle the quickfix window
 nmap <Leader><Leader> <Plug>window:quickfix:toggle
+
+" enable matchit
+runtime macros/matchit.vim
