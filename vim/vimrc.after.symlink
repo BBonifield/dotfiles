@@ -113,6 +113,8 @@ vnoremap <A-k> :m-2<CR>gv=gv
 nnoremap <Leader>cf :let @*=expand("%:t")<cr>:echo "Copied file name to clipboard"<cr>
 " Copy current buffer path relative to root of VIM session to system clipboard
 nnoremap <Leader>cp :let @*=expand("%")<cr>:echo "Copied file path to clipboard"<cr>
+" Copy current buffer path relative to root of VIM session with line number to system clipboard
+nnoremap <Leader>cn :let @*=expand("%").":".line(".")<cr>:echo "Copied file path with line number to clipboard"<cr>
 
 " Turn off focusing
 nnoremap <Leader>ff :%s/, \(focus: true\\|:focus\)//<cr>:noh<cr>
