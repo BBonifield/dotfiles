@@ -51,15 +51,28 @@ autocmd! AuNERDTreeCmd FocusGained
 
 " CtrlP Customizations
 let g:ctrlp_working_path_mode = 0 " start in the current working instead of traversing up
-if executable('ag')
-  " use silver surfer instead of ack for speed
-  let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:ctrlp_prompt_mappings = {
+  \ 'AcceptSelection("h")': ['<c-h>'],
+  \ }
+if executable('rg')
+  " use ripgrep instead of ack for speed
+  let g:ackprg = 'rg --vimgrep --no-heading'
 
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  let g:ctrlp_max_files = 15000
+  let g:ctrlp_user_command = 'rg %s --files --maxdepth=10 --color=never'
+  " let g:ctrlp_user_command = 'rg %s -l --color=never --maxdepth=10 -g ""'
   let g:ctrlp_max_height = 20
   let g:ctrlp_use_caching = 0
 endif
+
+" if executable('ag')
+  " " use silver surfer instead of ack for speed
+  " let g:ackprg = 'ag --nogroup --nocolor --column'
+
+  " let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  " let g:ctrlp_max_files = 15000
+  " let g:ctrlp_max_height = 20
+  " let g:ctrlp_use_caching = 0
+" endif
 
 " Link syntastic to rbenv ruby
 let g:syntastic_ruby_exec = '/usr/local/var/rbenv/shims/ruby'
@@ -79,8 +92,8 @@ endif
 
 " CtrlP aliasing
 " - disabled as i try out fzf
-" map <C-t> :CtrlP<CR>
-" map <D-t> :CtrlP<CR>
+map <C-t> :CtrlP<CR>
+map <D-t> :CtrlP<CR>
 
 " Easy insert mode exit
 inoremap jj <Esc>
@@ -178,20 +191,22 @@ nmap <Leader>fw :Ack! "\b<cword>\b"<CR>
 vmap <Leader>fw y:Ack! "\b<C-r>"\b"<CR>
 
 " fzf customizations
-map <C-p> :Files<CR>
-map <C-t> :Files<CR>
-map <D-t> :Files<CR>
-map <C-b> :Buffers<CR>
-map <Leader>b :Buffers<CR>
-let g:fzf_action = {
-  \ 'ctrl-h': 'split',
-  \ 'ctrl-v': 'vsplit' }
-map <Leader>fb :Buffers<CR>
-map <Leader>fu :FZFMru<CR>
-map <Leader>ff :Files<CR>
+" disabled for the time being due to fzf quirks
+" map <C-p> :Files<CR>
+" map <C-t> :Files<CR>
+" map <D-t> :Files<CR>
+" map <C-b> :Buffers<CR>
+" map <Leader>b :Buffers<CR>
+" let g:fzf_action = {
+  " \ 'ctrl-h': 'split',
+  " \ 'ctrl-v': 'vsplit' }
+" map <Leader>fb :Buffers<CR>
+" map <Leader>fu :FZFMru<CR>
+" map <Leader>ff :Files<CR>
 
 " easily toggle the quickfix window
-nmap <Leader><Leader> <Plug>window:quickfix:toggle
+" disabled as this conflicts with easymotion
+" nmap <Leader><Leader> <Plug>window:quickfix:toggle
 
 " enable matchit
 runtime macros/matchit.vim
