@@ -87,6 +87,7 @@ alias polymer='cd ~/projects/polymer/polymer'
 alias scotch='cd ~/projects/polymer/scotch'
 alias supergloo='cd ~/projects/polymer/supergloo'
 
+
 # edit dotfiles
 alias dotfiles="cd $DOTS; $EDITOR ."
 
@@ -99,8 +100,9 @@ bindkey '[D' backward-word
 
 export NVM_DIR=~/.nvm
 alias load_nvm='export NVM_INSTALL_DIR=$(brew --prefix nvm) && [ -s "$NVM_INSTALL_DIR/nvm.sh" ] && . "$NVM_INSTALL_DIR/nvm.sh"'
-alias node='unalias node npm && load_nvm && node'
-alias npm='unalias node npm && load_nvm && npm'
+alias node='unalias node npm yarn && load_nvm && node'
+alias npm='unalias node npm yarn && load_nvm && npm'
+alias yarn='unalias node npm yarn && load_nvm && yarn'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
