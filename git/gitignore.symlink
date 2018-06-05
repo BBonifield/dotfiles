@@ -1,6 +1,6 @@
-.env
 .DS_Store
 .agignore
 vendor/bundle
-tags
 .ctagignore
+tags
+!tags/
