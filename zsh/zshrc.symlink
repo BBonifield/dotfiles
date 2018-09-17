@@ -82,7 +82,10 @@ alias g='git'
 alias h='heroku'
 alias gs='git status'
 alias mocha='npm run mocha'
+alias plop='npm run plop'
 alias eslint='npm run eslint'
+alias recent_js='mocha $(find test -name "*.test.js" -mmin -10)'
+alias recent_ruby='rspec $(find spec -name "*_spec.rb" -mmin -10)'
 
 # gloo specific aliases
 alias xssh='~/projects/ansible-polymer/xssh'
