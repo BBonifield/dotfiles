@@ -46,3 +46,9 @@
 [submodule "vim/janus.symlink/splitjoin.vim"]
 	path = vim/janus.symlink/splitjoin.vim
 	url = https://github.com/AndrewRadev/splitjoin.vim.git
+[submodule "vim/janus.symlink/vim-abolish"]
+	path = vim/janus.symlink/vim-abolish
+	url = https://github.com/tpope/vim-abolish.git
+[submodule "vim/janus.symlink/vim-mustache-handlebars"]
+	path = vim/janus.symlink/vim-mustache-handlebars
+	url = https://github.com/mustache/vim-mustache-handlebars.git
