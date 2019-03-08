@@ -1,8 +1,6 @@
-# the dots
+# dotfiles
 
-Big thanks to [@holman](https://github.com/holman) for [the
-inspiration/framework](https://github.com/holman/dotfiles).  I took what
-he did and modified it for my purposes.
+Big thanks to [@holman](https://github.com/holman) for [the inspiration](https://github.com/holman/dotfiles) to help others organize their dotfiles. And many thanks to [@bbonifield](https://github.com/bbonifield) for getting me to be sane about my config
 
 ## Pre-reqs
 
