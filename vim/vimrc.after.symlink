@@ -2,6 +2,9 @@
 " General settings
 "
 
+" Allow mouse scroll and click
+set mouse=a
+
 " Set colors and fonts
 set t_Co=256
 set background=dark
