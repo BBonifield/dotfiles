@@ -65,63 +65,44 @@ fi
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-# Setup python
-export PATH="$HOME/Library/Python/2.7/bin:$PATH"
+# Setup nvm
+
+export NVM_DIR="$HOME/.nvm"
+  . "/usr/local/opt/nvm/nvm.sh"
+[[ -s "$NVM_DIR/nvm.sh" ]] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Allow '[' or ']' to be used in command line strings (e.g. `rake # task[argument]`)
 unsetopt nomatch
+
+# Allow for quick search through history
+export HISTSIZE=10000
+export HISTFILESIZE=10000
+export HISTFILE=~/.zhistory
+
+setopt HIST_FIND_NO_DUPS
+
+setopt inc_append_history
+setopt share_history
+
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
 
 #
 # Aliases
 #
 
+alias ls='ls -hG'
+
 # shortcuts
 alias grepr='grep -R'
-alias r='rails'
-alias g='git'
-alias h='heroku'
-alias gs='git status'
-alias mocha='npm run mocha'
-alias plop='npm run plop'
-alias eslint='npm run eslint'
-alias recent_js='mocha $(find test -name "*.test.js" -mmin -10)'
-alias recent_ruby='rspec $(find spec -name "*_spec.rb" -mmin -10)'
+alias rrg="rake routes | grep"
+alias dc="docker-compose"
 
-# gloo specific aliases
-alias xssh='~/projects/ansible-polymer/xssh'
-alias polymer='cd ~/projects/polymer/polymer'
-alias scotch='cd ~/projects/polymer/scotch'
-alias supergloo='cd ~/projects/polymer/supergloo'
-
+alias showFiles="defaults write com.apple.finder AppleShowAllFiles YES && killall Finder"
+alias hideFiles="defaults write com.apple.finder AppleShowAllFiles NO && killall Finder"
 
 # edit dotfiles
 alias dotfiles="cd $DOTS; $EDITOR ."
 
-#
-# Key bindings
-#
-
-bindkey '[C' forward-word
-bindkey '[D' backward-word
-
-export NVM_DIR=~/.nvm
-alias load_nvm='export NVM_INSTALL_DIR=$(brew --prefix nvm) && [ -s "$NVM_INSTALL_DIR/nvm.sh" ] && . "$NVM_INSTALL_DIR/nvm.sh"'
-alias node='unalias node npm yarn && load_nvm && node'
-alias npm='unalias node npm yarn && load_nvm && npm'
-alias yarn='unalias node npm yarn && load_nvm && yarn'
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# fzf + ag configuration
-if type fzf &> /dev/null && type ag &> /dev/null; then
-  export FZF_DEFAULT_COMMAND='ag --nocolor --follow -g ""'
-  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-  export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
-  # custom solarized dark color scheme
-  export FZF_DEFAULT_OPTS='
-    --color fg:-1,bg:-1,hl:33,fg+:254,bg+:235,hl+:33
-    --color info:136,prompt:136,pointer:230,marker:230,spinner:136
-  '
-fi
