@@ -5,8 +5,9 @@
 " Set colors and fonts
 set t_Co=256
 set background=dark
-colorscheme onedark
-set guifont=mononoki:h18 " Maybe switch back to DejaVu Sans Mono someday
+color solarized
+set guifont=Monaco:h18
+" set guifont=mononoki:h14 " Maybe switch back to DejaVu Sans Mono someday
 
 " Don't show the intro message when starting vim.
 set shortmess=I
