@@ -2,19 +2,17 @@
   name = AUTHORNAME
   email = AUTHOREMAIL
 [alias]
-  a = add
-  s = status
-  c = commit
+  s = status -s
   br = branch
   co = checkout
+  commit = commit -v
   cp = cherry-pick
-  df = diff
-  lg = log -p
-  aa = add .
-  goodrebase = !git aa && git rebase --continue
-  deadbranches = "!git branch --merged | grep -v \\* | grep -v master | grep -v dev | xargs -n 1 git branch -d"
+  cleanlog = log --abbrev-commit --pretty=oneline
+  cl = cleanlog -10
+  aliases = config --get-regexp alias | sort
+  unstage = reset HEAD
 [credential]
-  helper = GIT_CREDENTIAL_HELPER
+  helper = osxkeychain
 [core]
   excludesfile = ~/.gitignore
   editor = /usr/bin/vim
@@ -22,15 +20,5 @@
   ui = true
 [push]
   default = simple
-[filter "media"]
-  required = true
-  clean = git media clean %f
-  smudge = git media smudge %f
-[filter "hawser"]
-  clean = git hawser clean %f
-  smudge = git hawser smudge %f
-  required = true
-[filter "lfs"]
-  clean = git lfs clean %f
-  smudge = git lfs smudge %f
-  required = true
+[merge]
+  tool = opendiff
