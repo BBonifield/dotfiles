@@ -58,3 +58,9 @@
 [submodule "vim/janus.symlink/syntastic"]
 	path = vim/janus.symlink/syntastic
 	url = git@github.com:vim-syntastic/syntastic.git
+[submodule "vim/janus.symlink/--force"]
+	path = vim/janus.symlink/--force
+	url = git@github.com:leafgarland/typescript-vim.git
+[submodule "vim/janus.symlink/typescript-vim"]
+	path = vim/janus.symlink/typescript-vim
+	url = git@github.com:leafgarland/typescript-vim.git
