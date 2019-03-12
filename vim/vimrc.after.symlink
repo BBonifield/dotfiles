@@ -16,10 +16,10 @@ set shortmess=I
 
 " Turn off wordwrap
 set nowrap
+set wrapmargin=0
 
 " Give more context
 set scrolloff=10
-
 " Make global search default
 set gdefault
 
