@@ -81,13 +81,6 @@ if executable('rg')
   let g:ctrlp_use_caching = 0
 endif
 
-" Link syntastic to rbenv ruby
-let g:syntastic_ruby_exec = '/usr/local/var/rbenv/shims/ruby'
-
-" Configure syntastic to use checkers
-let g:syntastic_javascript_checkers=['eslint']
-let g:syntastic_ruby_checkers=['rubocop']
-
 " Dispatch test runs into a shell
 let g:vroom_use_dispatch = 1
 let g:vroom_clear_screen = 0
@@ -171,6 +164,3 @@ nnoremap <Leader>tg :!if [ -f .ctagignore ] ; then CTAGIGNORE="--exclude=@.ctagi
 
 " Open the GitHub Desktop app
 map <silent> <Leader>gh :silent !github<CR>
-
-" Run syntastic on the current file
-nnoremap <Leader>rc :SyntasticCheck<CR>
