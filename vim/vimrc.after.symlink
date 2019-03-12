@@ -20,6 +20,7 @@ set wrapmargin=0
 
 " Give more context
 set scrolloff=10
+
 " Make global search default
 set gdefault
 
@@ -94,8 +95,8 @@ inoremap jj <Esc>
 " Select last pasted block
 nnoremap gp `[v`]
 
-" Focus opened file in nerdtree
-nmap ,nf :NERDTreeFind<CR>
+" Focus opened file in nerdtree - Fix this from slowing down nerdtree
+" nmap ,nf :NERDTreeFind<CR>
 
 " Faster file movement
 map <Space> 20j
