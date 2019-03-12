@@ -84,6 +84,9 @@ endif
 " Helpers/aliases customizations
 "
 
+"" Autosave on focus lost
+:au FocusLost * silent! wa
+
 " CtrlP aliasing
 " - disabled as i try out fzf
 map <C-t> :CtrlP<CR>
@@ -164,32 +167,8 @@ let g:syntastic_ruby_checkers=['rubocop']
 
 " Run syntastic on the current file
 nnoremap <Leader>rc :SyntasticCheck<CR>
-
-" Remap Ctrl-w + Ctrl-o to default zoomwin command since ctrl-w + o will trigger
-" vim's :only
-nnoremap <silent> <C-w><C-o> :ZoomWin<CR>
-
-" find selected text more easily
 nmap <Leader>fw :Ack! "\b<cword>\b"<CR>
 vmap <Leader>fw y:Ack! "\b<C-r>"\b"<CR>
-
-" fzf customizations
-" disabled for the time being due to fzf quirks
-" map <C-p> :Files<CR>
-" map <C-t> :Files<CR>
-" map <D-t> :Files<CR>
-" map <C-b> :Buffers<CR>
-" map <Leader>b :Buffers<CR>
-" let g:fzf_action = {
-  " \ 'ctrl-h': 'split',
-  " \ 'ctrl-v': 'vsplit' }
-" map <Leader>fb :Buffers<CR>
-" map <Leader>fu :FZFMru<CR>
-" map <Leader>ff :Files<CR>
-
-" easily toggle the quickfix window
-" disabled as this conflicts with easymotion
-" nmap <Leader><Leader> <Plug>window:quickfix:toggle
 
 " enable matchit
 runtime macros/matchit.vim
