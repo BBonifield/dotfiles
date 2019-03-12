@@ -67,3 +67,6 @@
 [submodule "vim/janus.symlink/vim-ruby"]
 	path = vim/janus.symlink/vim-ruby
 	url = git@github.com:vim-ruby/vim-ruby.git
+[submodule "vim/janus.symlink/ale"]
+	path = vim/janus.symlink/ale
+	url = git@github.com:w0rp/ale.git
