@@ -47,6 +47,9 @@ set wildignore+=*/tags
 " Plugin customizations
 "
 
+" Enable mustache-handlebars
+let g:mustache_abbreviations=1
+
 " NERDCommenter Customizations
 let NERDSpaceDelims = 1
 
