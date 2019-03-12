@@ -9,8 +9,7 @@ set mouse=a
 set t_Co=256
 set background=dark
 color solarized
-set guifont=Monaco:h18
-" set guifont=mononoki:h14 " Maybe switch back to DejaVu Sans Mono someday
+set guifont=Monaco:h14
 
 " Don't show the intro message when starting vim.
 set shortmess=I
@@ -68,16 +67,6 @@ if executable('rg')
   let g:ctrlp_use_caching = 0
 endif
 
-" if executable('ag')
-  " " use silver surfer instead of ack for speed
-  " let g:ackprg = 'ag --nogroup --nocolor --column'
-
-  " let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  " let g:ctrlp_max_files = 15000
-  " let g:ctrlp_max_height = 20
-  " let g:ctrlp_use_caching = 0
-" endif
-
 " Link syntastic to rbenv ruby
 let g:syntastic_ruby_exec = '/usr/local/var/rbenv/shims/ruby'
 
@@ -118,23 +107,12 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" Move lines up/down
-nnoremap <A-j> :m+<CR>==
-nnoremap <A-k> :m-2<CR>==
-inoremap <A-j> <Esc>:m+<CR>==gi
-inoremap <A-k> <Esc>:m-2<CR>==gi
-vnoremap <A-j> :m'>+<CR>gv=gv
-vnoremap <A-k> :m-2<CR>gv=gv
-
 " Copy current filename to system clipboard
 nnoremap <Leader>cf :let @*=expand("%:t")<cr>:echo "Copied file name to clipboard"<cr>
 " Copy current buffer path relative to root of VIM session to system clipboard
 nnoremap <Leader>cp :let @*=expand("%")<cr>:echo "Copied file path to clipboard"<cr>
 " Copy current buffer path relative to root of VIM session with line number to system clipboard
 nnoremap <Leader>cn :let @*=expand("%").":".line(".")<cr>:echo "Copied file path with line number to clipboard"<cr>
-
-" Turn off focusing
-nnoremap <Leader>ff :%s/, \(focus: true\\|:focus\)//<cr>:noh<cr>
 
 " render markdown preview
 map <silent> <Leader>md :silent w !ruby -e 'require "rubygems"; require "kramdown"; require "erb"; body = Kramdown::Document.new(STDIN.read.chomp, input: "GFM", hard_wrap: false).to_html; print ERB.new(File.read(Dir.home + "/.vim-support/kramdown.html.erb")).result(binding)' > /tmp/mdresult.html; open /tmp/mdresult.html<CR>
