@@ -94,7 +94,7 @@ bindkey "^[[B" history-beginning-search-forward
 alias ls='ls -hG'
 
 # shortcuts
-alias grepr='grep -R'
+alias grep='rg'
 alias rrg="rake routes | grep"
 alias dc="docker-compose"
 
