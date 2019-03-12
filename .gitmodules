@@ -52,3 +52,9 @@
 [submodule "vim/janus.symlink/vim-mustache-handlebars"]
 	path = vim/janus.symlink/vim-mustache-handlebars
 	url = https://github.com/mustache/vim-mustache-handlebars.git
+[submodule "vim/janus.symlink/nerdcommenter"]
+	path = vim/janus.symlink/nerdcommenter
+	url = git@github.com:scrooloose/nerdcommenter.git
+[submodule "vim/janus.symlink/syntastic"]
+	path = vim/janus.symlink/syntastic
+	url = git@github.com:vim-syntastic/syntastic.git
