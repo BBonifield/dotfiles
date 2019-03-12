@@ -16,9 +16,15 @@
 [core]
   excludesfile = ~/.gitignore
   editor = /usr/bin/vim
+  pager = less -F -X
 [color]
   ui = true
 [push]
   default = simple
 [merge]
   tool = opendiff
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
