@@ -57,9 +57,6 @@ filetype plugin on    " Enable filetype-specific plugins
 " Enable toggle-quickfix
 nmap <C-g><C-o> <Plug>window:quickfix:toggle
 
-" Enable mustache-handlebars
-let g:mustache_abbreviations=1
-
 " NERDCommenter Customizations
 let NERDSpaceDelims = 1
 
