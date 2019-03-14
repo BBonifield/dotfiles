@@ -20,7 +20,7 @@
 [color]
   ui = true
 [push]
-  default = simple
+  default = current
 [merge]
   tool = opendiff
 [filter "lfs"]
