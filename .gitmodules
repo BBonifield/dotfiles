@@ -1,6 +1,6 @@
 [submodule "vim/janus.symlink/nerdtree-ack"]
 	path = vim/janus.symlink/nerdtree-ack
-	url = https://github.com/tyok/nerdtree-ack.git
+	url = git@github.com:tyok/nerdtree-ack.git
 [submodule "vim/janus.symlink/nerdtree-git-plugin"]
 	path = vim/janus.symlink/nerdtree-git-plugin
 	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
@@ -73,3 +73,6 @@
 [submodule "vim/janus.symlink/auto-pairs"]
 	path = vim/janus.symlink/auto-pairs
 	url = git@github.com:jiangmiao/auto-pairs.git
+[submodule "vim/janus.symlink/ack.vim"]
+	path = vim/janus.symlink/ack.vim
+	url = git@github.com:mileszs/ack.vim.git
