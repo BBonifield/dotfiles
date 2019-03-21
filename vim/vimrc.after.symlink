@@ -57,6 +57,9 @@ filetype plugin on    " Enable filetype-specific plugins
 " Enable toggle-quickfix
 nmap <C-g><C-o> <Plug>window:quickfix:toggle
 
+" Show hidden files in NERDTree
+let NERDTreeShowHidden=1
+
 " NERDCommenter Customizations
 let NERDSpaceDelims = 1
 
