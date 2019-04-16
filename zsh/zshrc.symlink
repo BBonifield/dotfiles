@@ -97,6 +97,7 @@ alias ls='ls -hG'
 alias grep='rg'
 alias rrg="rake routes | grep"
 alias dc="docker-compose"
+alias add="bin/yarn add"
 
 alias showFiles="defaults write com.apple.finder AppleShowAllFiles YES && killall Finder"
 alias hideFiles="defaults write com.apple.finder AppleShowAllFiles NO && killall Finder"
