@@ -54,6 +54,9 @@ filetype plugin on    " Enable filetype-specific plugins
 " Plugin customizations
 "
 
+" Enable ale completion
+let g:ale_completion_enabled = 1
+
 " Enable toggle-quickfix
 nmap <C-g><C-o> <Plug>window:quickfix:toggle
 
@@ -94,7 +97,13 @@ endif
 " Helpers/aliases customizations
 "
 
-"" Autosave on focus lost
+" Don't prompt to load modified files
+set autoread
+
+" Enable quickfix window toggle
+nmap <C-g><C-o> <Plug>window:quickfix:toggle
+
+" Autosave on focus lost
 :au FocusLost * silent! wa
 
 " CtrlP aliasing
@@ -109,7 +118,7 @@ inoremap jj <Esc>
 nnoremap gp `[v`]
 
 " Focus opened file in nerdtree - Fix this from slowing down nerdtree
-" nmap ,nf :NERDTreeFind<CR>
+nmap ,nf :NERDTreeFind<CR>
 
 " Faster file movement
 map <Space> 20j
