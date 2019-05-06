@@ -94,10 +94,17 @@ bindkey "^[[B" history-beginning-search-forward
 alias ls='ls -hG'
 
 # shortcuts
+alias rb='rbenv'
 alias grep='rg'
 alias rrg="rake routes | grep"
+alias rubocop='bin/rubocop_current_branch'
 alias dc="docker-compose"
 alias add="bin/yarn add"
+
+alias dcrebuild="dc kill && dc down && dc build && bin/yarn && yarn"
+alias dbreset="bin/yarn sequelize db:drop && bin/yarn sequelize db:create && bin/yarn sequelize db:migrate"
+alias testdbreset="bin/yarn sequelize db:drop --env=test && bin/yarn sequelize db:create --env=test && bin/yarn sequelize db:migrate --env=test"
+alias fuckitall="dcrebuild && dbreset && testdbreset && dc up"
 
 alias showFiles="defaults write com.apple.finder AppleShowAllFiles YES && killall Finder"
 alias hideFiles="defaults write com.apple.finder AppleShowAllFiles NO && killall Finder"
