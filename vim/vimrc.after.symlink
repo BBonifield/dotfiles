@@ -11,6 +11,9 @@ set background=dark
 color solarized
 set guifont=Monaco:h14
 
+" Don't show awful scrollbars
+set guioptions=
+
 " Don't show the intro message when starting vim.
 set shortmess=I
 
