@@ -101,7 +101,7 @@ alias rubocop='bin/rubocop_current_branch'
 alias dc="docker-compose"
 alias add="bin/yarn add"
 
-alias dcrebuild="dc kill && dc down && dc build && bin/yarn && yarn"
+alias dcrebuild="dc kill && dc down -v && dc build && yarn"
 alias dbreset="bin/yarn sequelize db:drop && bin/yarn sequelize db:create && bin/yarn sequelize db:migrate"
 alias testdbreset="bin/yarn sequelize db:drop --env=test && bin/yarn sequelize db:create --env=test && bin/yarn sequelize db:migrate --env=test"
 alias fuckitall="dcrebuild && dbreset && testdbreset && dc up"
