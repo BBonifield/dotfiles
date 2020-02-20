@@ -61,6 +61,10 @@ then
   alias git=$hub_path
 fi
 
+# Git branch autocomplete
+# https://github.com/git/git/blob/master/contrib/completion/git-completion.zsh
+fpath=(~/.zsh $fpath)
+
 # Setup rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
@@ -113,4 +117,3 @@ alias hideFiles="defaults write com.apple.finder AppleShowAllFiles NO && killall
 alias dotfiles="cd $DOTS; $EDITOR ."
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
