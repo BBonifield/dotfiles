@@ -133,6 +133,9 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" Quickly switch to last buffer
+nnoremap <leader><tab> :b#<cr>
+
 " Copy current filename to system clipboard
 nnoremap <Leader>cf :let @*=expand("%:t")<cr>:echo "Copied file name to clipboard"<cr>
 " Copy current buffer path relative to root of VIM session to system clipboard
