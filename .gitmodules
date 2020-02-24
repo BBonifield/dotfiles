@@ -79,3 +79,6 @@
 [submodule "vim/janus.symlink/vim-surround"]
 	path = vim/janus.symlink/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "vim/janus.symlink/vim-rails"]
+	path = vim/janus.symlink/vim-rails
+	url = git@github.com:tpope/vim-rails.git
