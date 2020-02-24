@@ -134,7 +134,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Quickly switch to last buffer
-nnoremap <leader><tab> :b#<cr>
+nnoremap <C-tab> :b#<cr>
 
 " Copy current filename to system clipboard
 nnoremap <Leader>cf :let @*=expand("%:t")<cr>:echo "Copied file name to clipboard"<cr>
