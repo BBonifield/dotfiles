@@ -2,29 +2,31 @@
   name = AUTHORNAME
   email = AUTHOREMAIL
 [alias]
-  s = status -s
+  aliases = config --get-regexp alias
   br = branch
+  cleanlog = log --abbrev-commit --pretty=oneline
+  cl = cleanlog -10
   co = checkout
   commit = commit -v
   cp = cherry-pick
-  cleanlog = log --abbrev-commit --pretty=oneline
-  cl = cleanlog -10
-  aliases = config --get-regexp alias | sort
+  d = diff
+	rh = reset HEAD^
   unstage = reset HEAD
-[credential]
-  helper = osxkeychain
+  s = status -s
+[color]
+  ui = true
 [core]
   excludesfile = ~/.gitignore
   editor = /usr/bin/vim
   pager = less -F -X
-[color]
-  ui = true
-[push]
-  default = current
-[merge]
-  tool = opendiff
+[credential]
+  helper = osxkeychain
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+[merge]
+  tool = vimdiff
+[push]
+  default = current
