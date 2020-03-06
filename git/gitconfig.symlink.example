@@ -7,7 +7,7 @@
   cleanlog = log --abbrev-commit --pretty=oneline
   cl = cleanlog -10
   co = checkout
-  commit = commit -v
+  com = commit -v
   cp = cherry-pick
   d = diff
 	rh = reset HEAD^
