@@ -107,6 +107,8 @@ alias grep='rg'
 alias rrg="rake routes | grep"
 alias rubocop='bin/rubocop_current_branch'
 alias dc="docker-compose"
+alias dc-rspec="docker-compose run web rspec"
+alias dc-rake="docker-compose run web rake"
 
 # postgres
 alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
