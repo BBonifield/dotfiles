@@ -28,5 +28,7 @@
 	smudge = git-lfs smudge -- %f
 [merge]
   tool = vimdiff
+[pager]
+  branch = false
 [push]
   default = current
