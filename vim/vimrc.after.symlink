@@ -179,3 +179,6 @@ nnoremap <Leader>tg :!if [ -f .ctagignore ] ; then CTAGIGNORE="--exclude=@.ctagi
 
 " Open the GitHub Desktop app
 map <silent> <Leader>gh :silent !github<CR>
+
+" Use JS highlighting for apex files
+autocmd! BufNewFile,BufRead *.apex set syntax=javascript
