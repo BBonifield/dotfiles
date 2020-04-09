@@ -1,0 +1,184 @@
+"
+" General settings
+"
+
+" Allow mouse scroll and click
+set mouse=a
+
+" Set colors and fonts
+set t_Co=256
+set background=dark
+color solarized
+set guifont=Monaco:h14
+
+" Don't show awful scrollbars
+set guioptions=
+
+" Don't show the intro message when starting vim.
+set shortmess=I
+
+" Turn off wordwrap
+set nowrap
+set wrapmargin=0
+
+" Give more context
+set scrolloff=10
+
+" Make global search default
+set gdefault
+
+" Turn off error bells
+set noerrorbells visualbell t_vb=
+
+" Customize status line
+set statusline=%f\ %m%=Line\:%l/%L\ \@\ Col\:%v
+
+" Code Style
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+
+" Visual column for max line length indicator
+set colorcolumn=120
+
+" Globally ignore unhelpful folders/files
+set wildignore+=*/vendor/bundle/*
+set wildignore+=*/node_modules/*
+set wildignore+=*/tags
+
+" Syntax highlighting
+set nocompatible      " We're running Vim, not Vi!
+syntax on             " Enable syntax highlighting
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
+
+"
+" Plugin customizations
+"
+
+" Enable ale completion
+let g:ale_completion_enabled = 1
+
+" Enable toggle-quickfix
+nmap <C-g><C-o> <Plug>window:quickfix:toggle
+
+" Show hidden files in NERDTree
+let NERDTreeShowHidden=1
+
+" NERDCommenter Customizations
+let NERDSpaceDelims = 1
+
+" Don't refresh NERDTree on focus gained for speed gains
+autocmd! AuNERDTreeCmd FocusGained
+
+" CtrlP Customizations
+let g:ctrlp_working_path_mode = 0 " start in the current working instead of traversing up
+let g:ctrlp_prompt_mappings = {
+  \ 'AcceptSelection("h")': ['<c-h>'],
+  \ }
+if executable('rg')
+  " use ripgrep instead of ack for speed
+  let g:ackprg = 'rg --vimgrep --no-heading'
+
+  let g:ctrlp_user_command = 'rg %s --files --maxdepth=10 --color=never'
+  " let g:ctrlp_user_command = 'rg %s -l --color=never --maxdepth=10 -g ""'
+  let g:ctrlp_max_height = 20
+  let g:ctrlp_use_caching = 0
+endif
+
+" Dispatch test runs into a shell
+let g:vroom_use_dispatch = 1
+let g:vroom_clear_screen = 0
+
+" Turn off vim-ruby balloonexpr
+if has("gui_running")
+  setlocal balloonexpr=
+endif
+
+"
+" Helpers/aliases customizations
+"
+
+" Don't prompt to load modified files
+set autoread
+
+" Enable quickfix window toggle
+nmap <C-g><C-o> <Plug>window:quickfix:toggle
+
+" Autosave on focus lost
+:au FocusLost * silent! wa
+
+" CtrlP aliasing
+" - disabled as i try out fzf
+map <C-t> :CtrlP<CR>
+map <D-t> :CtrlP<CR>
+
+" Easy insert mode exit
+inoremap jj <Esc>
+
+" Select last pasted block
+nnoremap gp `[v`]
+
+" Focus opened file in nerdtree - Fix this from slowing down nerdtree
+nmap ,nf :NERDTreeFind<CR>
+
+" Faster file movement
+map <Space> 20j
+map <BS> 20k
+
+" Faster pane movement
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Quickly switch to last buffer
+nnoremap <C-tab> :b#<cr>
+
+" Copy current filename to system clipboard
+nnoremap <Leader>cf :let @*=expand("%:t")<cr>:echo "Copied file name to clipboard"<cr>
+" Copy current buffer path relative to root of VIM session to system clipboard
+nnoremap <Leader>cp :let @*=expand("%")<cr>:echo "Copied file path to clipboard"<cr>
+" Copy current buffer path relative to root of VIM session with line number to system clipboard
+nnoremap <Leader>cn :let @*=expand("%").":".line(".")<cr>:echo "Copied file path with line number to clipboard"<cr>
+
+" Copy current node filename to system clipboard
+call NERDTreeAddKeyMap({
+  \ 'key': ',cf',
+  \ 'callback': 'NERDTreeCopyNodePath',
+  \ 'quickhelpText': 'put full path of current node into the system clipboard' })
+
+function! NERDTreeCopyNodePath()
+  let n = g:NERDTreeFileNode.GetSelected()
+  if n != {}
+    let @*=n.path.str()
+    echo "Copied file name to clipboard"
+  endif
+endfunction
+
+" Copy current node path relative to root of VIM session to system clipboard
+call NERDTreeAddKeyMap({
+  \ 'key': ',cp',
+  \ 'callback': 'NERDTreeCopyRelativeNodePath',
+  \ 'quickhelpText': 'put full path of current node into the system clipboard' })
+
+function! NERDTreeCopyRelativeNodePath()
+  let n = g:NERDTreeFileNode.GetSelected()
+  if n != {}
+    let @*=fnamemodify(n.path.str(), ':.')
+    echo "Copied file path to clipboard"
+  endif
+endfunction
+
+" render markdown preview
+map <silent> <Leader>md :silent w !ruby -e 'require "rubygems"; require "kramdown"; require "erb"; body = Kramdown::Document.new(STDIN.read.chomp, input: "GFM", hard_wrap: false).to_html; print ERB.new(File.read(Dir.home + "/.vim-support/kramdown.html.erb")).result(binding)' > /tmp/mdresult.html; open /tmp/mdresult.html<CR>
+
+" ctags generation helper
+nnoremap <Leader>tg :!if [ -f .ctagignore ] ; then CTAGIGNORE="--exclude=@.ctagignore" ; fi; ctags -R --exclude=.git --exclude=node_modules node_cache jspm_packages $CTAGIGNORE .<CR>
+
+" Open the GitHub Desktop app
+map <silent> <Leader>gh :silent !github<CR>
+
+" Use JS highlighting for apex files
+autocmd! BufNewFile,BufRead *.apex set syntax=javascript
