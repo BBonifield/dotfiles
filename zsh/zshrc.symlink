@@ -121,3 +121,6 @@ alias hideFiles="defaults write com.apple.finder AppleShowAllFiles NO && killall
 alias dotfiles="cd $DOTS; $EDITOR ."
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# added by Snowflake SnowSQL installer v1.2
+export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
