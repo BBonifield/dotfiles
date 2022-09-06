@@ -124,3 +124,28 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # added by Snowflake SnowSQL installer v1.2
 export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
+
+# pyenv config
+alias pip='pip3'
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# For shims and autocompletion in pyenv
+if command -v pyenv 1>/dev/null 2>&1
+then
+  eval "$(pyenv init -)"
+fi
+# /pyenv config
+#
+# For setting default AWS CLI profile
+export AWS_PROFILE=development
+
+# Aliases for ssh-ing into dagster envs
+
+alias dagsterdev="ssh ubuntu@dagster-dev"
+alias dagsterprod="ssh ubuntu@dagster-prod"
