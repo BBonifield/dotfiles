@@ -1,6 +1,6 @@
 [user]
-  name = AUTHORNAME
-  email = AUTHOREMAIL
+  name = Tim Park
+  email = timsjpark@gmail.com
 [alias]
   aliases = config --get-regexp alias
   br = branch
@@ -10,7 +10,7 @@
   com = commit -v
   cp = cherry-pick
   d = diff
-	rh = reset HEAD^
+  rh = reset HEAD^
   unstage = reset HEAD
   s = status -s
 [color]
@@ -22,10 +22,10 @@
 [credential]
   helper = osxkeychain
 [filter "lfs"]
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
 [merge]
   tool = vimdiff
 [pager]
