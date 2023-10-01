@@ -3,4 +3,4 @@
 . $DOTS/functions/output.sh
 
 info "installing all Homebrew dependencies"
-brew install git hub ripgrep rbenv rbenv-bundler macvim pyenv
+brew install git hub ripgrep rbenv rbenv-bundler macvim pyenv pyenv-virtualenv
