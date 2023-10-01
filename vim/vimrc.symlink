@@ -1,0 +1,121 @@
+" Autosave on focus lost
+:au FocusLost * silent! wa
+
+" Change leader to something helpful
+let mapleader=","
+
+" Customize status line
+let g:lightline = {
+      \   'colorscheme': 'solarized',
+      \   'active': {
+      \     'right': [ ['lineinfo'], [], ['filetype'] ]
+      \   },
+      \   'component_function': {
+      \     'filename': 'LightlineFilename',
+      \   }
+      \ }
+
+function! LightlineFilename()
+  return fnamemodify(expand("%"), ":~:.")
+endfunction
+
+" Customize status line
+" set statusline=%f\ %m%=Line\:%l/%L\ \@\ Col\:%v
+
+" Set colors and fonts
+set t_Co=256
+set background=dark
+color solarized
+set guifont=Monaco:h14
+
+set colorcolumn=120 " Visual column for max line length indicator
+set guioptions=     " Don't show awful scrollbars
+set shortmess=I     " Don't show the intro message when starting vim.
+set nowrap          " Turn off wordwrap
+set wrapmargin=0
+
+" Code Style
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+
+" Syntax highlighting
+syntax on             " Enable syntax highlighting
+set nocompatible      " We're running Vim, not Vi!
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
+
+autocmd! BufNewFile,BufRead *.lkml set syntax=yaml
+autocmd! BufNewFile,BufRead *.lookml set syntax=yaml
+
+" Friendlier search
+set ignorecase
+set smartcase
+set incsearch
+set showmatch
+set nohlsearch
+
+" Allow mouse scroll and click
+set mouse=a
+
+" Easy insert mode exit
+inoremap jj <Esc>
+
+" Select last pasted block
+nnoremap gp `[v`]
+
+" Faster file movement
+map <Space> 20j
+map <BS> 20k
+
+" Faster pane movement
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" CtrlP Customizations
+let g:ctrlp_working_path_mode = 0 " start in the current working instead of traversing up
+let g:ctrlp_prompt_mappings = {
+  \ 'AcceptSelection("h")': ['<c-h>'],
+  \ }
+if executable('rg')
+  " use ripgrep instead of ack for speed
+  let g:ackprg = 'rg --vimgrep --no-heading'
+
+  let g:ctrlp_user_command = 'rg %s --files --maxdepth=10 --color=never'
+  let g:ctrlp_max_height = 20
+  let g:ctrlp_use_caching = 0
+endif
+
+" Give more context
+set scrolloff=10
+
+" Make global search default
+set gdefault
+
+" Turn off error bells
+set noerrorbells visualbell t_vb=
+
+" Globally ignore unhelpful folders/files
+set wildignore+=*/vendor/bundle/*
+set wildignore+=*/node_modules/*
+set wildignore+=*/tags
+
+" Quickly switch to last buffer
+nnoremap <C-tab> :b#<cr>
+
+" Copy current filename to system clipboard
+nnoremap <Leader>cf :let @*=expand("%:t")<cr>:echo "Copied file name to clipboard"<cr>
+" Copy current buffer path relative to root of VIM session to system clipboard
+nnoremap <Leader>cp :let @*=expand("%")<cr>:echo "Copied file path to clipboard"<cr>
+" Copy current buffer path relative to root of VIM session with line number to system clipboard
+nnoremap <Leader>cn :let @*=expand("%").":".line(".")<cr>:echo "Copied file path with line number to clipboard"<cr>
+
+" Open the GitHub Desktop app
+map <silent> <Leader>gh :silent !github<CR>
+
+" render markdown preview
+map <silent> <Leader>md :silent w !ruby -e 'require "rubygems"; require "kramdown"; require "erb"; body = Kramdown::Document.new(STDIN.read.chomp, input: "GFM", hard_wrap: false).to_html; print ERB.new(File.read(Dir.home + "/.vim-support/kramdown.html.erb")).result(binding)' > /tmp/mdresult.html; open /tmp/mdresult.html<CR>
+
