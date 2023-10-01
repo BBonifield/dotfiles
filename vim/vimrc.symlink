@@ -28,6 +28,7 @@ set background=dark
 color solarized
 set guifont=Monaco:h14
 
+set number          " Show line number
 set colorcolumn=120 " Visual column for max line length indicator
 set guioptions=     " Don't show awful scrollbars
 set shortmess=I     " Don't show the intro message when starting vim.
