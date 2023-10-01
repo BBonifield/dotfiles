@@ -1,5 +1,3 @@
-DOTS=$HOME/.dotfiles
-
 # Stash your environment variables in ~/.localrc. This means they'll stay out
 # of your main dotfiles repository (which may be public, like this one), but
 # you'll have access to them in your scripts.
@@ -10,7 +8,7 @@ fi
 
 # all of our zsh files
 typeset -U config_files
-config_files=($ZSH/**/*.zsh)
+config_files=($HOME/.dotfiles/**/*.zsh)
 
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}
