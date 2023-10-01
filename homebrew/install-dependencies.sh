@@ -3,4 +3,4 @@
 . $DOTS/functions/output.sh
 
 info "installing all Homebrew dependencies"
-brew install hub ag ruby-build nvm rbenv rbenv-bundler git ctags macvim
+brew install git hub ripgrep rbenv rbenv-bundler macvim
