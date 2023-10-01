@@ -8,7 +8,15 @@ getting me to be sane about my config.
 
 - [Xcode](https://apps.apple.com/us/app/xcode/id497799835?mt=12) - necessary for macvim
 - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+- [Github ssh setup](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 - [GitHub Desktop](https://desktop.github.com/) - accessible from vim with alias `<leader>gh`
+- [Vim Solarized](https://github.com/ericbn/vim-solarized)
+  - ```
+    $ cd ~/.vim
+    $ git clone git@github.com:ericbn/vim-solarized.git
+    $ mkdir colors
+    $ cp vim-solarized/colors/solarized.vim colors/
+    ``` 
 
 ## Installation & Updates
 
