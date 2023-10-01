@@ -15,9 +15,6 @@ export DOTS="$(dirname "$0")/.."
 info "setting OSX defaults"
 $DOTS/osx/set-defaults.sh
 
-info "upgrading Janus"
-$DOTS/vim/upgrade-janus.sh
-
 if test $(which brew)
 then
   info "updating Homebrew"

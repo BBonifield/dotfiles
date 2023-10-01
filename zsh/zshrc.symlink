@@ -1,4 +1,50 @@
-DOTS=$HOME/.dotfiles
+# Stash your environment variables in ~/.localrc. This means they'll stay out
+# of your main dotfiles repository (which may be public, like this one), but
+# you'll have access to them in your scripts.
+if [[ -a ~/.localrc ]]
+then
+  source ~/.localrc
+fi
+
+# all of our zsh files
+typeset -U config_files
+config_files=($HOME/.dotfiles/**/*.zsh)
+
+# load the path files
+for file in ${(M)config_files:#*/path.zsh}
+do
+  source $file
+done
+
+# load everything but the path and completion files
+for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
+do
+  source $file
+done
+
+# initialize autocomplete here, otherwise functions won't be loaded
+autoload -U compinit
+compinit
+
+# load every completion after autocomplete loads
+for file in ${(M)config_files:#*/completion.zsh}
+do
+  source $file
+done
+
+unset config_files
+
+# Allow for quick search through history
+export HISTSIZE=5000
+export HISTFILESIZE=5000
+export HISTFILE=~/.zhistory
+
+setopt HIST_FIND_NO_DUPS
+setopt inc_append_history
+setopt share_history
+
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
 
 #
 # oh-my-zsh setup
@@ -38,114 +84,5 @@ plugins=(git rake bundler git-flow grunt)
 
 source $ZSH/oh-my-zsh.sh
 
-#
-# General setup
-#
-
-# PATH modification
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:~/.dotfiles/bin
-
 # Load zsh overrides
 source ~/.zsh_profile
-
-# Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-# Customize default editor
-export EDITOR=mvim
-
-# Use hub instead of git
-hub_path=$(which hub)
-if (( $+commands[hub] ))
-then
-  alias git=$hub_path
-fi
-
-# Git branch autocomplete
-# https://github.com/git/git/blob/master/contrib/completion/git-completion.zsh
-zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
-fpath=(~/.zsh $fpath)
-
-autoload -U compinit && compinit
-zmodload -i zsh/complist
-
-# Setup rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
-# Setup nvm
-
-export NVM_DIR="$HOME/.nvm"
-  . "/usr/local/opt/nvm/nvm.sh"
-[[ -s "$NVM_DIR/nvm.sh" ]] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# Allow '[' or ']' to be used in command line strings (e.g. `rake # task[argument]`)
-unsetopt nomatch
-
-# Allow for quick search through history
-export HISTSIZE=5000
-export HISTFILESIZE=5000
-export HISTFILE=~/.zhistory
-
-setopt HIST_FIND_NO_DUPS
-
-setopt inc_append_history
-setopt share_history
-
-bindkey "^[[A" history-beginning-search-backward
-bindkey "^[[B" history-beginning-search-forward
-
-#
-# Aliases
-#
-
-alias ls='ls -hG'
-alias gla='git config --get-regexp alias | sort'
-
-# shortcuts
-alias grep='rg'
-alias rrg="rake routes | grep"
-alias rubocop='bin/rubocop_current_branch'
-alias dc="docker-compose"
-alias dc-rspec="docker-compose run web rspec"
-alias dc-test="docker-compose run web test_all"
-
-# postgres
-alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
-
-alias showFiles="defaults write com.apple.finder AppleShowAllFiles YES && killall Finder"
-alias hideFiles="defaults write com.apple.finder AppleShowAllFiles NO && killall Finder"
-
-# edit dotfiles
-alias dotfiles="cd $DOTS; $EDITOR ."
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# added by Snowflake SnowSQL installer v1.2
-export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
-
-# pyenv config
-alias pip='pip3'
-
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-# For shims and autocompletion in pyenv
-if command -v pyenv 1>/dev/null 2>&1
-then
-  eval "$(pyenv init -)"
-fi
-# /pyenv config
-#
-# For setting default AWS CLI profile
-export AWS_PROFILE=development
-
-# Aliases for ssh-ing into dagster envs
-
-alias dagsterdev="ssh ubuntu@dagster-dev"
-alias dagsterprod="ssh ubuntu@dagster-prod"
