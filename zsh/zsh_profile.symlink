@@ -1,1 +1,2 @@
 unsetopt correct_all
+source $HOME/.dotfiles/zsh/aliases.zsh

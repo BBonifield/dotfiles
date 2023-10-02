@@ -1,3 +1,3 @@
 alias reload!='. ~/.zshrc'
-alias ls='ls -hG'
+alias ls='ls -lah'
 alias grep='rg'
