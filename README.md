@@ -38,14 +38,15 @@ Here's a list of other helpful tools to install on a brand new setup.
 - [rectangle](https://rectangleapp.com/)
 - [skitch](https://apps.apple.com/us/app/skitch-snap-mark-up-share/id425955336?mt=12)
 
-And here's a list of default settings to change
+And here's a list of default osx settings to change
 
 - Set keyboard key repeat to fast
 - Set keyboard key delay to short
 - Turn off alert sound
-- Turn off iCloud keychai
+- Turn off iCloud keychain
 
 ## Useful reading
 
 - [vim cheat sheet](https://vim.rtorr.com/)
 - [git completion](https://oliverspryn.com/blog/adding-git-completion-to-zsh)
+- [zsh plugins](https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins)
