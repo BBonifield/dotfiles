@@ -10,11 +10,7 @@ export DOTS="$(dirname "$0")/.."
 
 . $DOTS/functions/output.sh
 
-# Set OS X defaults
-
-info "setting OSX defaults"
-$DOTS/osx/set-defaults.sh
-
+# Update homebrew
 if test $(which brew)
 then
   info "updating Homebrew"
