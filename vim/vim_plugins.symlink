@@ -9,6 +9,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'jeffkreeftmeijer/vim-nightfall'         " magically switch between dark and light backgrounds according to the system dark mode
 Plug 'ctrlpvim/ctrlp.vim'                     " ^p to do a kind of fuzzy file open.
 Plug 'tpope/vim-fugitive'                     " A Git wrapper so awesome.
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rhubarb'                      " Enale Gbrowse for Github
 Plug 'godlygeek/tabular'                      " String alignment
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
