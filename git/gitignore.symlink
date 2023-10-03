@@ -4,4 +4,4 @@ vendor/bundle
 .ctagignore
 tags
 !tags/
-.swp
+*.swp
