@@ -20,9 +20,7 @@ let g:lightline = {
 function! LightlineFilename()
   return fnamemodify(expand("%"), ":~:.")
 endfunction
-
-" Customize status line
-" set statusline=%f\ %m%=Line\:%l/%L\ \@\ Col\:%v
+set laststatus=2
 
 " Set colors and fonts
 set t_Co=256
@@ -122,9 +120,13 @@ nnoremap <Leader>cp :let @*=expand("%")<cr>:echo "Copied file path to clipboard"
 " Copy current buffer path relative to root of VIM session with line number to system clipboard
 nnoremap <Leader>cn :let @*=expand("%").":".line(".")<cr>:echo "Copied file path with line number to clipboard"<cr>
 
-" Open the GitHub Desktop app
-map <silent> <Leader>gh :silent !github<CR>
-
 " render markdown preview
 map <silent> <Leader>md :silent w !ruby -e 'require "rubygems"; require "kramdown"; require "erb"; body = Kramdown::Document.new(STDIN.read.chomp, input: "GFM", hard_wrap: false).to_html; print ERB.new(File.read(Dir.home + "/.vim-support/kramdown.html.erb")).result(binding)' > /tmp/mdresult.html; open /tmp/mdresult.html<CR>
 
+" populate and open the quickfix list with an ag search term
+function! s:RGSearch(search_term)
+  cexpr system('rg ' . a:search_term)
+  copen
+endfunction
+
+command! -nargs=1 Rg call s:RGSearch(<q-args>)

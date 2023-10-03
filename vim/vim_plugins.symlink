@@ -19,5 +19,6 @@ Plug 'tpope/vim-commentary'
 
 " Coloring enhancements:
 Plug 'altercation/vim-colors-solarized'
+Plug 'itchyny/lightline.vim'
 
 call plug#end()
