@@ -22,6 +22,9 @@ function! LightlineFilename()
 endfunction
 set laststatus=2
 
+" Update gitgutter highlights faster
+set updatetime=100
+
 " Set colors and fonts
 set t_Co=256
 set background=dark
