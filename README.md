@@ -16,14 +16,15 @@ getting me to be sane about my config.
     $ git clone git@github.com:ericbn/vim-solarized.git
     $ mkdir colors
     $ cp vim-solarized/colors/solarized.vim colors/
-    ``` 
+    ```
+- [Vim Plug](https://github.com/junegunn/vim-plug#installation)
 
 ## Installation & Updates
 
-Assuming you have the pre-requisites, `$ bash script/install` will get everything setup.
-
-Things change over time, so run `$ bash upgrade-dotfiles` to pull in the latest
+- Assuming you have the pre-requisites, `$ bash script/install` will get everything setup.
+- Things change over time, so run `$ bash upgrade-dotfiles` to pull in the latest
 and greatest.
+- To install vim plugin, open up vim and run `:PlugInstall"
 
 ## From Scratch
 
