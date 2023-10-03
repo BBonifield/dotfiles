@@ -1,3 +1,5 @@
+source ~/.dotfiles/vim/vim_plugins
+
 " Autosave on focus lost
 :au FocusLost * silent! wa
 
@@ -89,6 +91,12 @@ if executable('rg')
   let g:ctrlp_max_height = 20
   let g:ctrlp_use_caching = 0
 endif
+
+" NerdTree customizations
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 
 " Give more context
 set scrolloff=10

@@ -1,0 +1,21 @@
+" https://github.com/junegunn/vim-plug
+" Gotcha: don't use .git at the end of the repository url
+" - Install plugins added here with:
+"   - :so %
+"   - :PlugInstall / :PlugUpdate
+" - Update vim-plug with :PlugUpgrade
+call plug#begin('~/.vim/plugged')
+
+Plug 'jeffkreeftmeijer/vim-nightfall'         " magically switch between dark and light backgrounds according to the system dark mode
+Plug 'ctrlpvim/ctrlp.vim'                     " ^p to do a kind of fuzzy file open.
+Plug 'tpope/vim-fugitive'                     " A Git wrapper so awesome.
+Plug 'tpope/vim-rhubarb'                      " Enale Gbrowse for Github
+Plug 'godlygeek/tabular'                      " String alignment
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+
+Plug 'tpope/vim-commentary'
+
+" Coloring enhancements:
+Plug 'altercation/vim-colors-solarized'
+
+call plug#end()
