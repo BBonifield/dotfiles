@@ -10,6 +10,7 @@ getting me to be sane about my config.
 - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 - [Github ssh setup](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 - [GitHub Desktop](https://desktop.github.com/) - accessible from vim with alias `<leader>gh`
+- [Vim Plug](https://github.com/junegunn/vim-plug#installation)
 - [Vim Solarized](https://github.com/ericbn/vim-solarized)
   - ```
     $ cd ~/.vim
@@ -17,7 +18,6 @@ getting me to be sane about my config.
     $ mkdir colors
     $ cp vim-solarized/colors/solarized.vim colors/
     ```
-- [Vim Plug](https://github.com/junegunn/vim-plug#installation)
 
 ## Installation & Updates
 
