@@ -1,5 +1,7 @@
 [user]
   name = Tim Park
+  # This is a global email config, you can set email local
+  # to a repo with `git config user.email "me@example.com"`
   email = timsjpark@gmail.com
 [alias]
   aliases = config --get-regexp alias
