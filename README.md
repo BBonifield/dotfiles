@@ -48,5 +48,6 @@ And here's a list of default osx settings to change
 ## Useful reading
 
 - [vim cheat sheet](https://vim.rtorr.com/)
-- [git completion](https://oliverspryn.com/blog/adding-git-completion-to-zsh)
 - [zsh plugins](https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins)
+- [git completion](https://oliverspryn.com/blog/adding-git-completion-to-zsh)
+  - [oh-my-zsh loading](https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh)
