@@ -133,3 +133,6 @@ function! s:RGSearch(search_term)
 endfunction
 
 command! -nargs=1 Rg call s:RGSearch(<q-args>)
+
+" gitgutter remaps
+nnoremap <Leader>gtog :GitGutterLineHighlightsToggle<CR>
