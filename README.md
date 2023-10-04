@@ -23,7 +23,7 @@ getting me to be sane about my config.
 - Assuming you have the pre-requisites, `$ bash script/install` will get everything setup.
 - Things change over time, so run `$ bash upgrade-dotfiles` to pull in the latest
 and greatest.
-- To install vim plugin, open up vim and run `:PlugInstall"
+- To install vim plugin, open up vim and run `:PlugInstall`
 
 ## From Scratch
 
