@@ -12,3 +12,10 @@
 **Personal Config**
 
 - Use <C-b> to navigate to last file in buffer
+
+## Editing
+
+**[vim-move](https://github.com/matze/vim-move)**
+
+- Select visual block and use <S-[h/j/k/l]> to move
+- This plugin has some quirks with undoing changes so it's best to use for minor adjustments

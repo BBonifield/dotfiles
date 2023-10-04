@@ -10,6 +10,7 @@ Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'ctrlpvim/ctrlp.vim'                     " ^p to do a kind of fuzzy file open.
 Plug 'godlygeek/tabular'                      " String alignment
 Plug 'tpope/vim-commentary'
+Plug 'matze/vim-move'
 
 " Ruby and Rails plugins
 Plug 'vim-ruby/vim-ruby'
