@@ -9,6 +9,9 @@ getting me to be sane about my config.
 - [Xcode](https://apps.apple.com/us/app/xcode/id497799835?mt=12) - necessary for macvim
 - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 - [Github ssh setup](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+- [Github access token setup](https://github.com/mislav/hub/issues/2655#issuecomment-735836048)
+  - When first running `hub browse`, you'll need to paste your token as the password
+  - Only allow the token to have `repo:status` permission to start
 - [Vim Plug](https://github.com/junegunn/vim-plug#installation)
 - [Vim Solarized](https://github.com/ericbn/vim-solarized)
   - ```
@@ -48,5 +51,6 @@ And here's a list of default osx settings to change
 ## Useful reading
 
 - [vim cheat sheet](https://vim.rtorr.com/)
-- [git completion](https://oliverspryn.com/blog/adding-git-completion-to-zsh)
 - [zsh plugins](https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins)
+- [git completion](https://oliverspryn.com/blog/adding-git-completion-to-zsh)
+  - [oh-my-zsh loading](https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh)

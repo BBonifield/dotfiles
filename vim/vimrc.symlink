@@ -113,8 +113,8 @@ set wildignore+=*/vendor/bundle/*
 set wildignore+=*/node_modules/*
 set wildignore+=*/tags
 
-" Quickly switch to last buffer
-nnoremap <C-tab> :b#<cr>
+" Quickly switch to last file opened
+nnoremap <C-b> :e #<CR>
 
 " Copy current filename to system clipboard
 nnoremap <Leader>cf :let @*=expand("%:t")<cr>:echo "Copied file name to clipboard"<cr>
@@ -133,3 +133,22 @@ function! s:RGSearch(search_term)
 endfunction
 
 command! -nargs=1 Rg call s:RGSearch(<q-args>)
+
+" gitgutter remaps
+nnoremap <Leader>gtog :GitGutterLineHighlightsToggle<CR>
+
+" vim-move remapping to shift as modifier key
+let g:move_map_keys = 0
+if has("gui_running")
+  nmap <S-Down> <Plug>MoveLineDown
+  nmap <S-Up> <Plug>MoveLineUp
+  nmap <S-Left> <Plug>MoveCharLeft
+  nmap <S-Right> <Plug>MoveCharRight
+  vmap <S-Down> <Plug>MoveBlockDown
+  vmap <S-Up> <Plug>MoveBlockUp
+  vmap <S-Left> <Plug>MoveBlockLeft
+  vmap <S-Right> <Plug>MoveBlockRight
+endif
+
+" Delete all marks quickly
+nnoremap <Leader>dm :delm!<CR>
