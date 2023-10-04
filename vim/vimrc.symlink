@@ -149,3 +149,6 @@ if has("gui_running")
   vmap <S-Left> <Plug>MoveBlockLeft
   vmap <S-Right> <Plug>MoveBlockRight
 endif
+
+" Delete all marks quickly
+nnoremap <Leader>dm :delm!<CR>

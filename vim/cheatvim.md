@@ -12,6 +12,7 @@
 **Personal Config**
 
 - Use `<C-b>` to navigate to last file in buffer
+- Use `<Leader>dm` to delete all local marks
 
 ## Editing
 
