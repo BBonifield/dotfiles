@@ -8,3 +8,7 @@
   - This is remapped to `<leader>gtog`
 - Jump between change hunks with `[c` and `]c`
 - You can stage and unstage hunks with `<leader>hs` and `<leader>hu`
+
+**Personal Config**
+
+- Use <C-b> to navigate to last file in buffer

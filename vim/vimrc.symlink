@@ -113,8 +113,8 @@ set wildignore+=*/vendor/bundle/*
 set wildignore+=*/node_modules/*
 set wildignore+=*/tags
 
-" Quickly switch to last buffer
-nnoremap <C-tab> :b#<cr>
+" Quickly switch to last file opened
+nnoremap <C-b> :e #<CR>
 
 " Copy current filename to system clipboard
 nnoremap <Leader>cf :let @*=expand("%:t")<cr>:echo "Copied file name to clipboard"<cr>
