@@ -13,6 +13,8 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'matze/vim-move'
 Plug 'kshenoy/vim-signature'
+Plug 'brooth/far.vim'
+Plug 'mileszs/ack.vim'
 
 " Ruby and Rails plugins
 Plug 'vim-ruby/vim-ruby'

@@ -131,13 +131,12 @@ nnoremap <Leader>cn :let @*=expand("%").":".line(".")<cr>:echo "Copied file path
 " render markdown preview
 map <silent> <Leader>md :silent w !ruby -e 'require "rubygems"; require "kramdown"; require "erb"; body = Kramdown::Document.new(STDIN.read.chomp, input: "GFM", hard_wrap: false).to_html; print ERB.new(File.read(Dir.home + "/.vim-support/kramdown.html.erb")).result(binding)' > /tmp/mdresult.html; open /tmp/mdresult.html<CR>
 
-" populate and open the quickfix list with an ag search term
-function! s:RGSearch(search_term)
-  cexpr system('rg ' . a:search_term)
-  copen
-endfunction
-
-command! -nargs=1 Rg call s:RGSearch(<q-args>)
+" Reconfigure Ack to use rg and use :Ack! by default
+" :Ack! does not jump to the first match
+if executable('rg')
+  let g:ackprg = 'rg --vimgrep'
+endif
+cnoreabbrev Ack Ack!
 
 " gitgutter remaps
 nnoremap <Leader>gtog :GitGutterLineHighlightsToggle<CR>
@@ -157,3 +156,6 @@ endif
 
 " Delete all marks quickly
 nnoremap <Leader>dm :delm!<CR>
+
+" far.vim configuration
+let g:far#enable_undo=1

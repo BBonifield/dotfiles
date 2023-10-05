@@ -27,3 +27,17 @@
 - cs<1><2> (change surroundings)
 - ds<1> (delete surrounds)
 - ys<motion><1> (you surround motion with <1>)
+
+**[far.vim](https://github.com/brooth/far.vim)
+
+- `:Far <search> <replace>`
+- In the quickfix window
+  - `i` to include or `I` to include all
+  - `x` to exclude or `X` to exclude all
+  - `s` to execute
+  - `u` to undo last replacement or `U` to undo all
+    - vimrc currently only sets undo limit to 1
+  - `q` to quit
+- case sensitivity sucks
+  - Prefix search term with `\C` for case-sensitive search
+  - `set smartcase` doesn't seem to work in vimrc
