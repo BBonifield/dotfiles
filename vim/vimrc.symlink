@@ -27,6 +27,8 @@ set laststatus=2
 
 " Update gitgutter highlights faster
 set updatetime=100
+" Fix gitgutter sidebar background color
+autocmd ColorScheme * highlight! link SignColumn LineNr
 
 " Set colors and fonts
 set t_Co=256
