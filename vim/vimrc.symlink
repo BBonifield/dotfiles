@@ -32,7 +32,7 @@ set updatetime=100
 set t_Co=256
 set background=dark
 color solarized
-set guifont=Monaco:h14
+set guifont=Monaco:h16
 
 set number          " Show line number
 set colorcolumn=120 " Visual column for max line length indicator
