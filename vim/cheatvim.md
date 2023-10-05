@@ -21,3 +21,9 @@
 - Select visual block and use `<S-[h/j/k/l]>` to move
 - This plugin has some quirks with undoing changes so it's best to use for minor adjustments
 - This also only works "with gui running" (in macvim)
+
+**[vim-surround](https://github.com/tpope/vim-surround)
+
+- cs<1><2> (change surroundings)
+- ds<1> (delete surrounds)
+- ys<motion><1> (you surround motion with <1>)
