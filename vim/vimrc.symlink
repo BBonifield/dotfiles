@@ -58,10 +58,10 @@ autocmd! BufNewFile,BufRead *.lookml set syntax=yaml
 
 " Friendlier search
 set ignorecase
-set smartcase
+set smartcase " doesn't seem to work with far.vim
 set incsearch
 set showmatch
-set nohlsearch
+set hlsearch
 
 " Allow mouse scroll and click
 set mouse=a
