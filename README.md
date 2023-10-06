@@ -34,6 +34,8 @@ and greatest.
 Here's a list of other helpful tools to install on a brand new setup.
 
 - [1password](https://1password.com/product/mac/)
+  - [sign into cli](https://developer.1password.com/docs/cli/app-integration)
+  - [secret references](https://developer.1password.com/docs/cli/secret-references)
 - [flycut](https://apps.apple.com/us/app/flycut-clipboard-manager/id442160987?mt=12)
 - [iterm](https://iterm2.com/)
   - Set colorscheme to Solarized Dark

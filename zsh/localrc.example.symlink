@@ -1,0 +1,1 @@
+export GITHUB_OAUTH_CREDENTIALS="op://vault_name/item_name/item_field"
