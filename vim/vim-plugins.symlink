@@ -28,5 +28,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'jeffkreeftmeijer/vim-nightfall'         " magically switch between dark and light backgrounds according to the system dark mode
 Plug 'altercation/vim-colors-solarized'
 Plug 'itchyny/lightline.vim'
+Plug 'nathanaelkane/vim-indent-guides'
 
 call plug#end()

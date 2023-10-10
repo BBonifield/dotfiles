@@ -146,3 +146,6 @@ vnoremap < <gv
 
 " far.vim configuration
 let g:far#enable_undo=1
+
+" Toggle indent guides
+nnoremap <Leader>dent :IndentGuidesToggle<CR>
