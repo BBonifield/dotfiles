@@ -11,7 +11,6 @@ Plug 'ctrlpvim/ctrlp.vim'                     " ^p to do a kind of fuzzy file op
 Plug 'godlygeek/tabular'                      " String alignment
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'matze/vim-move'
 Plug 'kshenoy/vim-signature'
 Plug 'brooth/far.vim'
 Plug 'mileszs/ack.vim'

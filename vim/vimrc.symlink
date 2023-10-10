@@ -140,21 +140,9 @@ cnoreabbrev Ack Ack!
 " gitgutter remaps
 nnoremap <Leader>gtog :GitGutterLineHighlightsToggle<CR>
 
-" vim-move remapping to shift as modifier key
-let g:move_map_keys = 0
-if has("gui_running")
-  nmap <S-Down> <Plug>MoveLineDown
-  nmap <S-Up> <Plug>MoveLineUp
-  nmap <S-Left> <Plug>MoveCharLeft
-  nmap <S-Right> <Plug>MoveCharRight
-  vmap <S-Down> <Plug>MoveBlockDown
-  vmap <S-Up> <Plug>MoveBlockUp
-  vmap <S-Left> <Plug>MoveBlockLeft
-  vmap <S-Right> <Plug>MoveBlockRight
-endif
-
-" Delete all marks quickly
-nnoremap <Leader>dm :delm!<CR>
+" Stay in visual mode when indenting blocks
+vnoremap > >gv
+vnoremap < <gv
 
 " far.vim configuration
 let g:far#enable_undo=1

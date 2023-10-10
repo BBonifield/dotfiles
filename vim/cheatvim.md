@@ -2,6 +2,11 @@
 
 ## Navigation
 
+**Personal Config**
+
+- Use `<C-b>` to navigate to last file in buffer
+- Use `<Leader>dm` to delete all local marks
+
 **[gitgutter](https://github.com/airblade/vim-gitgutter)**
 
 - Toggle line highlighting with toggle with `toggle with :GitGutterLineHighlightsToggle`
@@ -9,26 +14,20 @@
 - Jump between change hunks with `[c` and `]c`
 - You can stage and unstage hunks with `<leader>hs` and `<leader>hu`
 
-**Personal Config**
-
-- Use `<C-b>` to navigate to last file in buffer
-- Use `<Leader>dm` to delete all local marks
-
 ## Editing
 
-**[vim-move](https://github.com/matze/vim-move)**
+** Personal Config**
 
-- Select visual block and use `<S-[h/j/k/l]>` to move
-- This plugin has some quirks with undoing changes so it's best to use for minor adjustments
-- This also only works "with gui running" (in macvim)
+- Select visual block and use `<S-</>>` to move left and right
+  - I re-mapped the vim default so you stay in visual-mode
 
-**[vim-surround](https://github.com/tpope/vim-surround)
+**[vim-surround](https://github.com/tpope/vim-surround)**
 
 - cs<1><2> (change surroundings)
 - ds<1> (delete surrounds)
 - ys<motion><1> (you surround motion with <1>)
 
-**[far.vim](https://github.com/brooth/far.vim)
+**[far.vim](https://github.com/brooth/far.vim)**
 
 - `:Far <search> <replace>`
 - In the quickfix window
